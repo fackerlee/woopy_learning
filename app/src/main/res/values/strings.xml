@@ -5,4 +5,7 @@
     <string name="title_for_welcome_page">Let’s start the journey!</string>
     <string name="dec_for_woopy_logo">this is the image of the Woopy logo</string>
     <string name="dex_img_icon_next">This is the image for icon arrow next</string>
+    <string name="learn_now">Learn Now</string>
+    <string name="let_s_play">Let\'s Play</string>
+    <string name="menu">menu</string>
 </resources>
