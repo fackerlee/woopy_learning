@@ -1,19 +1,17 @@
 package com.example.final_assignment
 
-import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.realpacific.clickshrinkeffect.applyClickShrink
+import render.animations.Attention
+import render.animations.Render
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var framelayout_wild: FrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +19,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        framelayout_wild = findViewById(R.id.framelayout_wild)
+
+        val render = Render(this@MainActivity)
+        render.setAnimation(Attention.Wobble(framelayout_wild))
+        render.setDuration(3000)
+        render.start()
+
+        framelayout_wild.setOnClickListener {
+
+        }
+        framelayout_wild.applyClickShrink()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

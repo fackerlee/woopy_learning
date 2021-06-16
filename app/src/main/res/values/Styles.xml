@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="type_title_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/comicbd</item>
+        <item name="android:textSize">@dimen/title_type_size</item>
+    </style>
+
+
+</resources>

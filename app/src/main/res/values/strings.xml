@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">final_assignment</string>
+    <string name="app_name">Types of animals</string>
 
 
     <!--Welcome Page-->
@@ -10,4 +10,10 @@
     <string name="learn_now">Learn Now</string>
     <string name="let_s_play">Let\'s Play</string>
     <string name="menu">menu</string>
+    <string name="des_wild_animals">This is the wild Animals</string>
+    <string name="des_sea_animals">This is the sea Animals</string>
+    <string name="des_farm_animals">This is the farm Animals</string>
+    <string name="txt_wild_animals">Wild Animals</string>
+    <string name="farm_animals">Farm Animals</string>
+    <string name="sea_animals">Sea Animals</string>
 </resources>

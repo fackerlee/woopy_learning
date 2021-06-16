@@ -1,11 +1,13 @@
 package com.example.final_assignment
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.animation.Animation
 import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.realpacific.clickshrinkeffect.applyClickShrink
+import render.animations.Attention
+import render.animations.Render
+
 
 class WelcomeActivity : AppCompatActivity() {
 
