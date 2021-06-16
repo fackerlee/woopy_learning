@@ -2,13 +2,7 @@
     <string name="app_name">final_assignment</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_for_welcome_page">Let’s start the journey!</string>
     <string name="dec_for_woopy_logo">this is the image of the Woopy logo</string>
+    <string name="dex_img_icon_next">This is the image for icon arrow next</string>
 </resources>
