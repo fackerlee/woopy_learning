@@ -13,8 +13,11 @@
     <string name="des_wild_animals">This is the wild Animals</string>
     <string name="des_sea_animals">This is the sea Animals</string>
     <string name="des_farm_animals">This is the farm Animals</string>
+    <string name="des_mammal_animals">This is mammal Animals</string>
+    <string name="des_bird_animals">This is bird Animals</string>
     <string name="txt_wild_animals">Wild Animals</string>
     <string name="farm_animals">Farm Animals</string>
     <string name="sea_animals">Sea Animals</string>
     <string name="mammal_animals">Mammal Animals</string>
+    <string name="bird_animals">Bird Animals</string>
 </resources>

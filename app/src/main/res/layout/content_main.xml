@@ -28,7 +28,7 @@
                     android:id="@+id/cardview_wild"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#C3996B"
+                    app:cardBackgroundColor="#BF9363"
                     app:cardCornerRadius="@dimen/type_corner_radius">
 
                     <ImageView
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_farm_animals"
+                        android:contentDescription="@string/des_mammal_animals"
                         app:srcCompat="@drawable/icon_08" />
 
                     <TextView
@@ -149,6 +149,39 @@
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_marginStart="@dimen/title_type_margin"
                         android:text="@string/mammal_animals" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/framelayout_bird"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:clickable="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#637BFF"
+                    app:cardCornerRadius="@dimen/type_corner_radius">
+
+                    <ImageView
+                        android:id="@+id/image_bird"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/type_margin"
+                        android:contentDescription="@string/des_bird_animals"
+                        app:srcCompat="@drawable/icon_18" />
+
+                    <TextView
+                        android:id="@+id/txt_title_bird"
+                        style="@style/type_title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginStart="@dimen/title_type_margin"
+                        android:text="@string/bird_animals" />
                 </androidx.cardview.widget.CardView>
             </FrameLayout>
 
