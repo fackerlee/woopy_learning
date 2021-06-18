@@ -6,185 +6,186 @@
     android:layout_height="match_parent"
     android:background="@color/bg_purple"
     android:orientation="vertical"
-    android:padding="24dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/framelayout_wild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/type_padding_layout">
 
-            <FrameLayout
-                android:id="@+id/framelayout_wild"
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_wild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:orientation="vertical">
+                app:cardBackgroundColor="#BF9363"
+                app:cardCornerRadius="@dimen/type_corner_radius">
 
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardview_wild"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/image_wild"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#BF9363"
-                    app:cardCornerRadius="@dimen/type_corner_radius">
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/type_margin"
+                    android:contentDescription="@string/des_wild_animals"
+                    app:srcCompat="@drawable/icon_06" />
 
-                    <ImageView
-                        android:id="@+id/image_wild"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_wild_animals"
-                        app:srcCompat="@drawable/icon_06" />
+                <TextView
+                    android:id="@+id/txt_title_wild"
+                    style="@style/type_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="@dimen/title_type_margin"
+                    android:text="@string/txt_wild_animals" />
+            </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/txt_title_wild"
-                        style="@style/type_title_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginStart="@dimen/title_type_margin"
-                        android:text="@string/txt_wild_animals" />
-                </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-            </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framelayout_sea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="@dimen/type_padding_layout">
 
-            <FrameLayout
-                android:id="@+id/framelayout_sea"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:clickable="true">
+                app:cardBackgroundColor="#3AC4E8"
+                app:cardCornerRadius="@dimen/type_corner_radius">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/image_sea"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#3AC4E8"
-                    app:cardCornerRadius="@dimen/type_corner_radius">
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/type_margin"
+                    android:contentDescription="@string/des_sea_animals"
+                    app:srcCompat="@drawable/icon_13" />
 
-                    <ImageView
-                        android:id="@+id/image_sea"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_sea_animals"
-                        app:srcCompat="@drawable/icon_13" />
+                <TextView
+                    android:id="@+id/txt_titile_sea"
+                    style="@style/type_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="@dimen/title_type_margin"
+                    android:text="@string/sea_animals" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-                    <TextView
-                        android:id="@+id/txt_titile_sea"
-                        style="@style/type_title_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginStart="@dimen/title_type_margin"
-                        android:text="@string/sea_animals" />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framelayout_farm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="@dimen/type_padding_layout">
 
-            <FrameLayout
-                android:id="@+id/framelayout_farm"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:clickable="true">
+                app:cardBackgroundColor="#00CC99"
+                app:cardCornerRadius="@dimen/type_corner_radius">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/image_farm"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#00CC99"
-                    app:cardCornerRadius="@dimen/type_corner_radius">
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/type_margin"
+                    android:contentDescription="@string/des_farm_animals"
+                    app:srcCompat="@drawable/icon_04" />
 
-                    <ImageView
-                        android:id="@+id/image_farm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_farm_animals"
-                        app:srcCompat="@drawable/icon_04" />
+                <TextView
+                    android:id="@+id/txt_titile_farm"
+                    style="@style/type_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="@dimen/title_type_margin"
+                    android:text="@string/farm_animals" />
+            </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/txt_titile_farm"
-                        style="@style/type_title_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginStart="@dimen/title_type_margin"
-                        android:text="@string/farm_animals" />
-                </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-            </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framelayout_mammal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:padding="@dimen/type_padding_layout">
 
-            <FrameLayout
-                android:id="@+id/framelayout_mammal"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
-                android:clickable="true">
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#CA7979"
+                app:cardCornerRadius="@dimen/type_corner_radius">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/image_mammal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#CA7979"
-                    app:cardCornerRadius="@dimen/type_corner_radius">
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/type_margin"
+                    android:contentDescription="@string/des_mammal_animals"
+                    app:srcCompat="@drawable/icon_08" />
 
-                    <ImageView
-                        android:id="@+id/image_mammal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_mammal_animals"
-                        app:srcCompat="@drawable/icon_08" />
+                <TextView
+                    android:id="@+id/txt_titile_mammal"
+                    style="@style/type_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="@dimen/title_type_margin"
+                    android:text="@string/mammal_animals" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-                    <TextView
-                        android:id="@+id/txt_titile_mammal"
-                        style="@style/type_title_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginStart="@dimen/title_type_margin"
-                        android:text="@string/mammal_animals" />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framelayout_bird"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:padding="@dimen/type_padding_layout">
 
-            <FrameLayout
-                android:id="@+id/framelayout_bird"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25dp"
-                android:clickable="true">
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#637BFF"
+                app:cardCornerRadius="@dimen/type_corner_radius">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/image_bird"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#637BFF"
-                    app:cardCornerRadius="@dimen/type_corner_radius">
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/type_margin"
+                    android:contentDescription="@string/des_bird_animals"
+                    app:srcCompat="@drawable/icon_18" />
 
-                    <ImageView
-                        android:id="@+id/image_bird"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_margin="@dimen/type_margin"
-                        android:contentDescription="@string/des_bird_animals"
-                        app:srcCompat="@drawable/icon_18" />
+                <TextView
+                    android:id="@+id/txt_title_bird"
+                    style="@style/type_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="@dimen/title_type_margin"
+                    android:text="@string/bird_animals" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-                    <TextView
-                        android:id="@+id/txt_title_bird"
-                        style="@style/type_title_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_marginStart="@dimen/title_type_margin"
-                        android:text="@string/bird_animals" />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+</ScrollView>
 
