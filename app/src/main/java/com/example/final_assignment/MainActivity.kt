@@ -12,6 +12,10 @@ import render.animations.Render
 class MainActivity : AppCompatActivity() {
 
     private lateinit var framelayout_wild: FrameLayout
+    private lateinit var framelayout_sea: FrameLayout
+    private lateinit var framelayout_farm: FrameLayout
+    private lateinit var framelayout_mammal: FrameLayout
+    private lateinit var framelayout_bird: FrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,17 +23,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        framelayout_wild = findViewById(R.id.framelayout_wild)
+        setReferences()
 
-        val render = Render(this@MainActivity)
-        render.setAnimation(Attention.Wobble(framelayout_wild))
-        render.setDuration(3000)
-        render.start()
+        setButtonClickEffect()
+
+
+
+
 
         framelayout_wild.setOnClickListener {
 
         }
+
+    }
+
+    private fun setButtonClickEffect() {
         framelayout_wild.applyClickShrink()
+        framelayout_sea.applyClickShrink()
+        framelayout_farm.applyClickShrink()
+        framelayout_mammal.applyClickShrink()
+        framelayout_bird.applyClickShrink()
+    }
+
+    private fun setReferences() {
+        framelayout_wild = findViewById(R.id.framelayout_wild)
+        framelayout_sea = findViewById(R.id.framelayout_sea)
+        framelayout_farm = findViewById(R.id.framelayout_farm)
+        framelayout_mammal = findViewById(R.id.framelayout_mammal)
+        framelayout_bird = findViewById(R.id.framelayout_bird)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
