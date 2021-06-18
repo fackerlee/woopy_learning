@@ -7,20 +7,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-
+    <include
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Final_assignment.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/btn_orange"
-            app:popupTheme="@style/Theme.Final_assignment.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_height="wrap_content" />
 
     <include
         layout="@layout/content_main"

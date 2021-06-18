@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Types of animals</string>
-
+    <string name="app_name">Woopy Learning</string>
+    <string name="app_type_animals">Types of Snimals</string>
+    <string name="app_wild_animals">Wild Animals</string>
 
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
