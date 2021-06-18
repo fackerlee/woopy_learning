@@ -7,5 +7,17 @@
         <item name="android:textSize">@dimen/title_type_size</item>
     </style>
 
+    <style name="title_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/comicbd</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="des_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/comic</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
 
 </resources>

@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         framelayout_wild.setOnClickListener {
 
+            val intent = Intent(this, WildAnimalsActivity::class.java)
+            startActivity(intent)
+
         }
 
     }
