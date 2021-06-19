@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        framelayout_sea.setOnClickListener {
+
+            val intent = Intent(this, SeaAnimalsActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 
     private fun setButtonClickEffect() {
