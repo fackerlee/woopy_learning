@@ -18,6 +18,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
     private lateinit var content_speed: TextView
     private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
+    private lateinit var bg_ice: ImageView
 
     val animals = arrayOf(
         Animal("Blue Whale"
@@ -69,13 +70,23 @@ class SeaAnimalsActivity : AppCompatActivity() {
             render.setAnimation(Attention.Wobble(title_animal))
             render.start()
 
-
             index++
+
+            if (index == 2){
+                bg_ice.setImageResource(R.drawable.bg_arctic)
+            }
+            else if (index == 3){
+                bg_ice.setImageResource(R.drawable.bg_arctic)
+            }
+            else {
+                bg_ice.setImageResource(R.drawable.bg_mammal)
+            }
 
             if (index == animals.size)
                 index = 0
 
             loadBook(index)
+
         }
     }
 
@@ -93,6 +104,6 @@ class SeaAnimalsActivity : AppCompatActivity() {
         content_lifespan = findViewById(R.id.textview_lifespan)
         content_speed = findViewById(R.id.textview_speed)
         button_next = findViewById(R.id.framelayout_btn_icon_next)
-
+        bg_ice = findViewById(R.id.image_bg_sea)
     }
 }
