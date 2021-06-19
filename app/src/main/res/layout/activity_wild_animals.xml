@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textview_title">
 
         <ImageView
-            android:id="@+id/image_bg_wild"
+            android:id="@+id/image_bg_sea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/des_image_bg_wild"
@@ -149,7 +149,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_lifespan"
-        tools:text="10 - 15 years " />
+        tools:text="10 - 15 Years " />
 
     <TextView
         android:id="@+id/textview_title_speed"

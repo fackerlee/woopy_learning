@@ -28,4 +28,6 @@
     <string name="diet">Diet</string>
     <string name="des_image_bg_wild">image_bg_wild</string>
     <string name="des_image_animals_wild_snake">image_animals_wild_snake</string>
+    <string name="des_image_bg_sea">image_bg_sea</string>
+    <string name="des_image_animals_sea_whale">image_animals_sea_whale</string>
 </resources>
