@@ -89,7 +89,7 @@ class WildAnimalsActivity : AppCompatActivity() {
 
     private fun setReference(){
         title_animal = findViewById(R.id.textview_title)
-        image_animal = findViewById(R.id.image_animals_wild)
+        image_animal = findViewById(R.id.image_animals)
         content_diet = findViewById(R.id.textview_diet)
         content_habitat = findViewById(R.id.textview_habitat)
         content_lifespan = findViewById(R.id.textview_lifespan)

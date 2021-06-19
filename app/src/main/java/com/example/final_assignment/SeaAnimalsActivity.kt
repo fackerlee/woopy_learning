@@ -79,7 +79,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
                 bg_ice.setImageResource(R.drawable.bg_arctic)
             }
             else {
-                bg_ice.setImageResource(R.drawable.bg_mammal)
+                bg_ice.setImageResource(R.drawable.bg_sea)
             }
 
             if (index == animals.size)
@@ -98,12 +98,12 @@ class SeaAnimalsActivity : AppCompatActivity() {
 
     private fun setReference(){
         title_animal = findViewById(R.id.textview_title)
-        image_animal = findViewById(R.id.image_animals_wild)
+        image_animal = findViewById(R.id.image_animals)
         content_diet = findViewById(R.id.textview_diet)
         content_habitat = findViewById(R.id.textview_habitat)
         content_lifespan = findViewById(R.id.textview_lifespan)
         content_speed = findViewById(R.id.textview_speed)
         button_next = findViewById(R.id.framelayout_btn_icon_next)
-        bg_ice = findViewById(R.id.image_bg_sea)
+        bg_ice = findViewById(R.id.image_bg)
     }
 }
