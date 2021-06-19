@@ -13,7 +13,12 @@
         <activity
             android:name=".WildAnimalsActivity"
             android:label="@string/app_wild_animals"
-            android:theme="@style/Theme.Final_assignment.NoActionBar"></activity>
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/Theme.Final_assignment.NoActionBar">
@@ -23,10 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_type_animals"
-            android:theme="@style/Theme.Final_assignment.NoActionBar"></activity>
+            android:label="@string/app_type_animals">
+
+        </activity>
+
     </application>
 
 </manifest>

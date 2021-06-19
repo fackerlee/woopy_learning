@@ -1,11 +1,13 @@
 package com.example.final_assignment
 
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import render.animations.Attention
+import render.animations.Render
+
 
 class WildAnimalsActivity : AppCompatActivity() {
 
@@ -15,7 +17,7 @@ class WildAnimalsActivity : AppCompatActivity() {
     private lateinit var content_habitat: TextView
     private lateinit var content_lifespan: TextView
     private lateinit var content_speed: TextView
-    private lateinit var button_next: Button
+    private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
 
     val animals = arrayOf(
@@ -31,7 +33,6 @@ class WildAnimalsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wild_animals)
-        setSupportActionBar(findViewById(R.id.toolbar))
 
         setReference()
         setListeners()
@@ -58,10 +59,17 @@ class WildAnimalsActivity : AppCompatActivity() {
     private fun setListeners() {
 
         button_next.setOnClickListener {
+
+            val render = Render(this@WildAnimalsActivity)
+
+            render.setAnimation(Attention.Wobble(title_animal))
+            render.start()
+
+
             index++
 
             if (index == animals.size)
-                index = 0;
+                index = 0
 
             loadBook(index)
         }
