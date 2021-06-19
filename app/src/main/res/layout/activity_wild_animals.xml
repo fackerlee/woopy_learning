@@ -49,7 +49,7 @@
             app:srcCompat="@drawable/bg_wild" />
 
         <ImageView
-            android:id="@+id/image_animals_wild_snake"
+            android:id="@+id/image_animals_wild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
