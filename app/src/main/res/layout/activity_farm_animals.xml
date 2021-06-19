@@ -39,7 +39,7 @@
             android:id="@+id/image_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/des_image_bg_sea"
+            android:contentDescription="@string/des_image_bg_farm"
             app:srcCompat="@drawable/bg_farm" />
 
         <ImageView
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:contentDescription="@string/des_image_animals_wild_snake"
+            android:contentDescription="@string/des_image_animals_farm_cow"
             app:srcCompat="@drawable/cow" />
 
 

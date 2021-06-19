@@ -48,6 +48,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        framelayout_mammal.setOnClickListener {
+
+            val intent = Intent(this, MammalAnimalsActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 
     private fun setButtonClickEffect() {

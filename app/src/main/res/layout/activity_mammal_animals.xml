@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_purple"
     android:orientation="vertical"
-    tools:context=".SeaAnimalsActivity">
+    tools:context=".MammalAnimalsActivity">
 
     <TextView
         android:id="@+id/textview_title"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Blue Whale" />
+        tools:text="Monkey" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_image"
@@ -39,16 +39,16 @@
             android:id="@+id/image_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/des_image_bg_sea"
-            app:srcCompat="@drawable/bg_sea" />
+            android:contentDescription="@string/des_image_bg_mammal"
+            app:srcCompat="@drawable/bg_mammal" />
 
         <ImageView
             android:id="@+id/image_animals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:contentDescription="@string/des_image_animals_sea_whale"
-            app:srcCompat="@drawable/whale" />
+            android:contentDescription="@string/des_image_animals_mammal_monkey"
+            app:srcCompat="@drawable/monkey" />
 
 
         <FrameLayout
@@ -97,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_diet"
-        tools:text="Carnivores" />
+        tools:text="Omnivores" />
 
     <TextView
         android:id="@+id/textview_title_habitat"
@@ -122,7 +122,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_habitat"
-        tools:text="The world's oceans, except the Arctic" />
+        tools:text="Tropical rainforests of Asia, Africa, and America" />
 
     <TextView
         android:id="@+id/textview_title_lifespan"
@@ -148,7 +148,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_lifespan"
-        tools:text="80 - 90 Years " />
+        tools:text="15 - 20 Years " />
 
     <TextView
         android:id="@+id/textview_title_speed"
@@ -174,7 +174,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_speed"
-        tools:text="20 km/h" />
+        tools:text="55 km/h" />
 
     <FrameLayout
         android:id="@+id/framelayout_btn_icon_next"
