@@ -5,6 +5,7 @@
     <string name="app_sea_animals">Sea Animals</string>
     <string name="app_farm_animals">Farm Animals</string>
     <string name="app_mammal_animals">Mammal Animals</string>
+    <string name="app_bird_animals">Bird Animals</string>
 
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
@@ -36,4 +37,6 @@
     <string name="des_image_animals_farm_cow">image_animals_farm_cow</string>
     <string name="des_image_bg_mammal">image_bg_mammal</string>
     <string name="des_image_animals_mammal_monkey">image_animals_mammal_monkey</string>
+    <string name="des_image_bg_bird">image_bg_bird</string>
+    <string name="des_image_animals_bird_eagle">image_animals_bird_eagle</string>
 </resources>

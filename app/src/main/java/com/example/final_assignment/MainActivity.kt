@@ -55,6 +55,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        framelayout_bird.setOnClickListener {
+
+            val intent = Intent(this, BirdAnimalsActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 
     private fun setButtonClickEffect() {

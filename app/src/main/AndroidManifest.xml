@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_assignment">
-        <activity android:name=".MammalAnimalsActivity"
+        <activity android:name=".BirdAnimalsActivity"
+            android:label="@string/app_bird_animals"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".MammalAnimalsActivity"
             android:label="@string/app_mammal_animals"
             android:parentActivityName=".MainActivity">
             <meta-data
