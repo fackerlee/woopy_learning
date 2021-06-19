@@ -21,7 +21,10 @@
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:orientation="vertical"
-            android:padding="@dimen/type_padding_layout">
+            android:paddingLeft="@dimen/type_padding_left_right"
+            android:paddingTop="@dimen/type_padding_up_down"
+            android:paddingRight="@dimen/type_padding_left_right"
+            android:paddingBottom="@dimen/type_padding_up_down">
 
 
             <androidx.cardview.widget.CardView
@@ -57,7 +60,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:padding="@dimen/type_padding_layout">
+            android:paddingLeft="@dimen/type_padding_left_right"
+            android:paddingTop="@dimen/type_padding_up_down"
+            android:paddingRight="@dimen/type_padding_left_right"
+            android:paddingBottom="@dimen/type_padding_up_down">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -90,7 +96,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:padding="@dimen/type_padding_layout">
+            android:paddingLeft="@dimen/type_padding_left_right"
+            android:paddingTop="@dimen/type_padding_up_down"
+            android:paddingRight="@dimen/type_padding_left_right"
+            android:paddingBottom="@dimen/type_padding_up_down">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -124,7 +133,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:padding="@dimen/type_padding_layout">
+            android:paddingLeft="@dimen/type_padding_left_right"
+            android:paddingTop="@dimen/type_padding_up_down"
+            android:paddingRight="@dimen/type_padding_left_right"
+            android:paddingBottom="@dimen/type_padding_up_down">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -157,7 +169,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:padding="@dimen/type_padding_layout">
+            android:paddingLeft="@dimen/type_padding_left_right"
+            android:paddingTop="@dimen/type_padding_up_down"
+            android:paddingRight="@dimen/type_padding_left_right"
+            android:paddingBottom="@dimen/type_padding_up_down">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
