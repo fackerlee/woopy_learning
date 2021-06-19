@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.realpacific.clickshrinkeffect.applyClickShrink
-import render.animations.Attention
-import render.animations.Render
 
 
 class WelcomeActivity : AppCompatActivity() {
@@ -18,7 +16,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
 
-        framelayout_btn_icon = findViewById(R.id.framelayout_btn_icon)
+        framelayout_btn_icon = findViewById(R.id.framelayout_btn_icon_next)
 
         framelayout_btn_icon.setOnClickListener {
 

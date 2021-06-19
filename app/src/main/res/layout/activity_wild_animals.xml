@@ -57,7 +57,7 @@
 
 
         <FrameLayout
-            android:id="@+id/framelayout_btn_iconww"
+            android:id="@+id/framelayout_btn_icon_speaker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -176,14 +176,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/framelayout_btn_icon"
+        app:layout_constraintEnd_toStartOf="@+id/framelayout_btn_icon_next"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_speed"
         tools:text="29 km/h" />
 
     <FrameLayout
-        android:id="@+id/framelayout_btn_icon"
+        android:id="@+id/framelayout_btn_icon_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
