@@ -27,8 +27,8 @@ class WildAnimalsActivity : AppCompatActivity() {
         Animal("Red Fox"
             , R.drawable.fox, "Omnivores", "Forests, grasslands, mountains, and deserts", "2-5 Years", "50 km/h"
         ),
-        Animal("Blue Whale"
-            , R.drawable.whale, "Carnivores", "The world's oceans, except the Arctic", "80-90 Years", "20 km/h"
+        Animal("Hippopotamus"
+            , R.drawable.hippopotamus, "Herbivores", "live in areas with abundant water", "40-50 Years", "48 km/h"
         ),
         Animal("Tiger"
             , R.drawable.tiger, "Carnivores", "Rain forests, grasslands and mangrove swamps", "8-10 Years", "65 km/h"
