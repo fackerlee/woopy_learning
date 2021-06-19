@@ -25,7 +25,13 @@ class WildAnimalsActivity : AppCompatActivity() {
             , R.drawable.snake_1, "Carnivores", "Land and water", "10-15 Years", "29 km/h"
         ),
         Animal("Red Fox"
-            , R.drawable.icon_04, "Omnivores", "Forests, grasslands, mountains, and deserts", "2-5 Years", "50 km/h"
+            , R.drawable.fox, "Omnivores", "Forests, grasslands, mountains, and deserts", "2-5 Years", "50 km/h"
+        ),
+        Animal("Blue Whale"
+            , R.drawable.whale, "Carnivores", "The world's oceans, except the Arctic", "80-90 Years", "20 km/h"
+        ),
+        Animal("Tiger"
+            , R.drawable.tiger, "Carnivores", "Rain forests, grasslands and mangrove swamps", "8-10 Years", "65 km/h"
         )
     )
     private var index:Int = 0
@@ -82,7 +88,7 @@ class WildAnimalsActivity : AppCompatActivity() {
     }
 
     private fun setReference(){
-        title_animal = findViewById(R.id.textview_title_diet)
+        title_animal = findViewById(R.id.textview_title)
         image_animal = findViewById(R.id.image_animals_wild)
         content_diet = findViewById(R.id.textview_diet)
         content_habitat = findViewById(R.id.textview_habitat)

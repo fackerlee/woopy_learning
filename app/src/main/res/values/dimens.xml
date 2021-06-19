@@ -1,6 +1,6 @@
 <resources>
 
-    <dimen name="title_type_size">20sp</dimen>
+    <dimen name="title_type_size">23sp</dimen>
     <dimen name="type_corner_radius">30dp</dimen>
     <dimen name="type_margin">24dp</dimen>
     <dimen name="type_padding_layout">20dp</dimen>
