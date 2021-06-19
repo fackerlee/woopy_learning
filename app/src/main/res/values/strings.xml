@@ -3,6 +3,7 @@
     <string name="app_type_animals">Types of Animals</string>
     <string name="app_wild_animals">Wild Animals</string>
     <string name="app_sea_animals">Sea Animals</string>
+    <string name="app_farm_animals">Farm Animals</string>
 
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
@@ -30,4 +31,6 @@
     <string name="des_image_animals_wild_snake">image_animals_wild_snake</string>
     <string name="des_image_bg_sea">image_bg_sea</string>
     <string name="des_image_animals_sea_whale">image_animals_sea_whale</string>
+    <string name="des_image_bg_farm">image_bg_farm</string>
+    <string name="des_image_animals_farm_cow">image_animals_farm_cow</string>
 </resources>

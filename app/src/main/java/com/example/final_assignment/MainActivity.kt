@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         setButtonClickEffect()
 
-
-
-
-
         framelayout_wild.setOnClickListener {
 
             val intent = Intent(this, WildAnimalsActivity::class.java)
@@ -41,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         framelayout_sea.setOnClickListener {
 
             val intent = Intent(this, SeaAnimalsActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        framelayout_farm.setOnClickListener {
+
+            val intent = Intent(this, FarmAnimalsActivity::class.java)
             startActivity(intent)
 
         }

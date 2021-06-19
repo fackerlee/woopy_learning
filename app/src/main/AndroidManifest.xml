@@ -9,14 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_assignment">
-        <activity android:name=".SeaAnimalsActivity"
+        <activity android:name=".FarmAnimalsActivity"
+            android:label="@string/app_farm_animals"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".SeaAnimalsActivity"
             android:label="@string/app_sea_animals"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".WildAnimalsActivity"
             android:label="@string/app_wild_animals"
@@ -25,7 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/Theme.Final_assignment.NoActionBar">
@@ -37,7 +43,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_type_animals"></activity>
+            android:label="@string/app_type_animals" />
     </application>
 
 </manifest>
