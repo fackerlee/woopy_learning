@@ -21,4 +21,8 @@
     <string name="sea_animals">Sea Animals</string>
     <string name="mammal_animals">Mammal Animals</string>
     <string name="bird_animals">Bird Animals</string>
+    <string name="speed">Speed</string>
+    <string name="lifespan">Lifespan</string>
+    <string name="habitat">Habitat</string>
+    <string name="diet">Diet</string>
 </resources>
