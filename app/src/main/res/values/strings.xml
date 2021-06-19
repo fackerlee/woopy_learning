@@ -25,4 +25,6 @@
     <string name="lifespan">Lifespan</string>
     <string name="habitat">Habitat</string>
     <string name="diet">Diet</string>
+    <string name="des_image_bg_wild">image_bg_wild</string>
+    <string name="des_image_animals_wild_snake">image_animals_wild_snake</string>
 </resources>

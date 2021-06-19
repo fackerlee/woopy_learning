@@ -45,6 +45,7 @@
             android:id="@+id/image_bg_wild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/des_image_bg_wild"
             app:srcCompat="@drawable/bg_wild" />
 
         <ImageView
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="30dp"
+            android:contentDescription="@string/des_image_animals_wild_snake"
             app:srcCompat="@drawable/snake_1" />
 
 
