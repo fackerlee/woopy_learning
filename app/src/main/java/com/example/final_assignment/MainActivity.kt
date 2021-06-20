@@ -93,6 +93,8 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_learn -> {
 
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)

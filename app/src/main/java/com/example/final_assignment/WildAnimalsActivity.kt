@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import render.animations.Attention
-import render.animations.Render
+import androidx.cardview.widget.CardView
+import render.animations.*
 
 
 class WildAnimalsActivity : AppCompatActivity() {
@@ -19,15 +19,30 @@ class WildAnimalsActivity : AppCompatActivity() {
     private lateinit var content_speed: TextView
     private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
+    private lateinit var cardView_image: CardView
+
+    val render_title = Render(this@WildAnimalsActivity)
+    val render_image = Render(this@WildAnimalsActivity)
+    val render_diet = Render(this@WildAnimalsActivity)
+    val render_habitat = Render(this@WildAnimalsActivity)
+    val render_lifespan = Render(this@WildAnimalsActivity)
+    val render_speed = Render(this@WildAnimalsActivity)
+
 
     val animals = arrayOf(
-        Animal("Snake"
-            , R.drawable.snake_1, "Carnivores", "Land and water", "10-15 Years", "29 km/h"
+        Animal(
+            "Snake", R.drawable.snake_1, "Carnivores", "Land and water", "10-15 Years", "29 km/h"
         ),
-        Animal("Red Fox"
-            , R.drawable.fox, "Omnivores", "Forests, grasslands, mountains, and deserts", "2-5 Years", "50 km/h"
+        Animal(
+            "Red Fox",
+            R.drawable.fox,
+            "Omnivores",
+            "Forests, grasslands, mountains, and deserts",
+            "2-5 Years",
+            "50 km/h"
         ),
-        Animal("Hippopotamus"
+        Animal(
+            "Hippopotamus"
             , R.drawable.hippopotamus, "Herbivores", "live in areas with abundant water", "40-50 Years", "48 km/h"
         ),
         Animal("Tiger"
@@ -44,11 +59,45 @@ class WildAnimalsActivity : AppCompatActivity() {
         setListeners()
         loadBook(0)
 
-        framelayout_btn_icon_speaker = findViewById(R.id.framelayout_btn_icon_speaker)
+        render_title.setAnimation(Attention.Shake(title_animal))
+        render_image.setAnimation(Bounce.InLeft(cardView_image))
+        render_diet.setAnimation(Bounce.InLeft(content_diet))
+        render_habitat.setAnimation(Bounce.InLeft(content_habitat))
+        render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
+        render_speed.setAnimation(Bounce.InLeft(content_speed))
+
+        render_title.setDuration(1000)
+        render_image.setDuration(1000)
+        render_diet.setDuration(1000)
+        render_habitat.setDuration(1000)
+        render_lifespan.setDuration(1000)
+        render_speed.setDuration(1000)
+
+        render_title.start()
+        render_image.start()
+        render_diet.start()
+        render_habitat.start()
+        render_lifespan.start()
+        render_speed.start()
+
 
         framelayout_btn_icon_speaker.setOnClickListener {
-            val mediaPlayer = MediaPlayer.create(this, R.raw.snake)
-            mediaPlayer.start()
+
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.snake)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.wolf)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.hippo)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.tiger)
+                mediaPlayer.start()
+            } else {
+            }
+
 
         }
     }
@@ -66,11 +115,19 @@ class WildAnimalsActivity : AppCompatActivity() {
 
         button_next.setOnClickListener {
 
-            val render = Render(this@WildAnimalsActivity)
+            render_title.setAnimation(Attention.Shake(title_animal))
+            render_image.setAnimation(Bounce.InLeft(cardView_image))
+            render_diet.setAnimation(Bounce.InLeft(content_diet))
+            render_habitat.setAnimation(Bounce.InLeft(content_habitat))
+            render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
+            render_speed.setAnimation(Bounce.InLeft(content_speed))
 
-            render.setAnimation(Attention.Wobble(title_animal))
-            render.start()
-
+            render_title.start()
+            render_image.start()
+            render_diet.start()
+            render_habitat.start()
+            render_lifespan.start()
+            render_speed.start()
 
             index++
 
@@ -87,7 +144,9 @@ class WildAnimalsActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setReference(){
+    private fun setReference() {
+        framelayout_btn_icon_speaker = findViewById(R.id.framelayout_btn_icon_speaker)
+        cardView_image = findViewById(R.id.cardView_image)
         title_animal = findViewById(R.id.textview_title)
         image_animal = findViewById(R.id.image_animals)
         content_diet = findViewById(R.id.textview_diet)
