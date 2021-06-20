@@ -6,6 +6,7 @@ import android.view.Menu
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.realpacific.clickshrinkeffect.applyClickShrink
 import render.animations.*
 
 
@@ -80,6 +81,8 @@ class WildAnimalsActivity : AppCompatActivity() {
         render_lifespan.start()
         render_speed.start()
 
+        framelayout_btn_icon_speaker.applyClickShrink()
+        button_next.applyClickShrink()
 
         framelayout_btn_icon_speaker.setOnClickListener {
 
