@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.media.MediaPlayer
 import android.view.Menu
 import android.widget.*
+import androidx.cardview.widget.CardView
 import render.animations.Attention
+import render.animations.Bounce
 import render.animations.Render
 
 class SeaAnimalsActivity : AppCompatActivity() {
@@ -19,15 +21,35 @@ class SeaAnimalsActivity : AppCompatActivity() {
     private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
     private lateinit var bg_ice: ImageView
+    private lateinit var cardView_image: CardView
+
+    val render_title = Render(this@SeaAnimalsActivity)
+    val render_image = Render(this@SeaAnimalsActivity)
+    val render_diet = Render(this@SeaAnimalsActivity)
+    val render_habitat = Render(this@SeaAnimalsActivity)
+    val render_lifespan = Render(this@SeaAnimalsActivity)
+    val render_speed = Render(this@SeaAnimalsActivity)
+
 
     val animals = arrayOf(
-        Animal("Blue Whale"
-            , R.drawable.whale, "Carnivores", "The world's oceans, except the Arctic", "80-90 Years", "20 km/h"
+        Animal(
+            "Blue Whale",
+            R.drawable.whale,
+            "Carnivores",
+            "The world's oceans, except the Arctic",
+            "80-90 Years",
+            "20 km/h"
         ),
-        Animal("Dolphin"
-            , R.drawable.dolphin, "Carnivores", "Freshwater streams and rivers", "30-50 Years", "54 km/h"
+        Animal(
+            "Dolphin",
+            R.drawable.dolphin,
+            "Carnivores",
+            "Freshwater streams and rivers",
+            "30-50 Years",
+            "54 km/h"
         ),
-        Animal("Polar Bear"
+        Animal(
+            "Polar Bear"
             , R.drawable.polarbear, "Carnivores", "Shores and on sea ice in the icy cold Arctic", "15-18 Years", "40 km/h"
         ),
         Animal("Seal"
@@ -43,11 +65,43 @@ class SeaAnimalsActivity : AppCompatActivity() {
         setListeners()
         loadBook(0)
 
-        framelayout_btn_icon_speaker = findViewById(R.id.framelayout_btn_icon_speaker)
+        render_title.setAnimation(Attention.Shake(title_animal))
+        render_image.setAnimation(Bounce.InLeft(cardView_image))
+        render_diet.setAnimation(Bounce.InLeft(content_diet))
+        render_habitat.setAnimation(Bounce.InLeft(content_habitat))
+        render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
+        render_speed.setAnimation(Bounce.InLeft(content_speed))
+
+        render_title.setDuration(1000)
+        render_image.setDuration(1000)
+        render_diet.setDuration(1000)
+        render_habitat.setDuration(1000)
+        render_lifespan.setDuration(1000)
+        render_speed.setDuration(1000)
+
+        render_title.start()
+        render_image.start()
+        render_diet.start()
+        render_habitat.start()
+        render_lifespan.start()
+        render_speed.start()
 
         framelayout_btn_icon_speaker.setOnClickListener {
-            val mediaPlayer = MediaPlayer.create(this, R.raw.snake)
-            mediaPlayer.start()
+
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.whale)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.dolphin)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.polar_bear)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.seal)
+                mediaPlayer.start()
+            } else {
+            }
 
         }
     }
@@ -65,20 +119,27 @@ class SeaAnimalsActivity : AppCompatActivity() {
 
         button_next.setOnClickListener {
 
-            val render = Render(this@SeaAnimalsActivity)
+            render_title.setAnimation(Attention.Shake(title_animal))
+            render_image.setAnimation(Bounce.InLeft(cardView_image))
+            render_diet.setAnimation(Bounce.InLeft(content_diet))
+            render_habitat.setAnimation(Bounce.InLeft(content_habitat))
+            render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
+            render_speed.setAnimation(Bounce.InLeft(content_speed))
 
-            render.setAnimation(Attention.Wobble(title_animal))
-            render.start()
+            render_title.start()
+            render_image.start()
+            render_diet.start()
+            render_habitat.start()
+            render_lifespan.start()
+            render_speed.start()
 
             index++
 
-            if (index == 2){
+            if (index == 2) {
                 bg_ice.setImageResource(R.drawable.bg_arctic)
-            }
-            else if (index == 3){
+            } else if (index == 3) {
                 bg_ice.setImageResource(R.drawable.bg_arctic)
-            }
-            else {
+            } else {
                 bg_ice.setImageResource(R.drawable.bg_sea)
             }
 
@@ -96,7 +157,9 @@ class SeaAnimalsActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setReference(){
+    private fun setReference() {
+        framelayout_btn_icon_speaker = findViewById(R.id.framelayout_btn_icon_speaker)
+        cardView_image = findViewById(R.id.cardView_image)
         title_animal = findViewById(R.id.textview_title)
         image_animal = findViewById(R.id.image_animals)
         content_diet = findViewById(R.id.textview_diet)
