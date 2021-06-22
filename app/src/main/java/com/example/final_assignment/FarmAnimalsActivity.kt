@@ -56,7 +56,7 @@ class FarmAnimalsActivity : AppCompatActivity() {
 
         setReference()      //set GUI references
         setListeners()      //create event handling for the button
-        loadBook(0)   //load the first animal details
+        loadAnimal(0)   //load the first animal details
 
         //set animation for the first animal details
         render_title.setAnimation(Attention.Shake(title_animal))
@@ -102,7 +102,7 @@ class FarmAnimalsActivity : AppCompatActivity() {
         }
     }
     //function for load and change animal details
-    private fun loadBook(index: Int = 0){
+    private fun loadAnimal(index: Int = 0){
         title_animal.text = animals[index].text_animal
         image_animal.setImageResource(animals[index].image)
         content_diet.text = animals[index].text_diet
@@ -133,7 +133,7 @@ class FarmAnimalsActivity : AppCompatActivity() {
             if (index == animals.size)
                 index = 0
 
-            loadBook(index)     //load and update animal details
+            loadAnimal(index)     //load and update animal details
         }
     }
 
