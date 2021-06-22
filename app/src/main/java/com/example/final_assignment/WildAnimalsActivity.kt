@@ -81,7 +81,7 @@ class WildAnimalsActivity : AppCompatActivity() {
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
 
-        //show animal sound after button speaker is clicked
+        //play animal sound after button speaker is clicked
         framelayout_btn_icon_speaker.setOnClickListener {
 
             if (index == 0) {
