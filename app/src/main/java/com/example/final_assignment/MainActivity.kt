@@ -12,6 +12,7 @@ import render.animations.Render
 
 class MainActivity : AppCompatActivity() {
 
+    //GUI components
     private lateinit var framelayout_wild: FrameLayout
     private lateinit var framelayout_sea: FrameLayout
     private lateinit var framelayout_farm: FrameLayout
@@ -26,35 +27,35 @@ class MainActivity : AppCompatActivity() {
         setReferences()
 
         setButtonClickEffect()
-
+        //clicked and go to WildAnimalsActivity
         framelayout_wild.setOnClickListener {
 
             val intent = Intent(this, WildAnimalsActivity::class.java)
             startActivity(intent)
 
         }
-
+        //clicked and go to SeaAnimalsActivity
         framelayout_sea.setOnClickListener {
 
             val intent = Intent(this, SeaAnimalsActivity::class.java)
             startActivity(intent)
 
         }
-
+        //clicked and go to FarmAnimalsActivity
         framelayout_farm.setOnClickListener {
 
             val intent = Intent(this, FarmAnimalsActivity::class.java)
             startActivity(intent)
 
         }
-
+        //clicked and go to MammalAnimalsActivity
         framelayout_mammal.setOnClickListener {
 
             val intent = Intent(this, MammalAnimalsActivity::class.java)
             startActivity(intent)
 
         }
-
+        //clicked and go to BirdAnimalsActivity
         framelayout_bird.setOnClickListener {
 
             val intent = Intent(this, BirdAnimalsActivity::class.java)
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
+    //function apply click animation
     private fun setButtonClickEffect() {
         framelayout_wild.applyClickShrink()
         framelayout_sea.applyClickShrink()
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         framelayout_mammal.applyClickShrink()
         framelayout_bird.applyClickShrink()
     }
-
+    //set GUI references
     private fun setReferences() {
         framelayout_wild = findViewById(R.id.framelayout_wild)
         framelayout_sea = findViewById(R.id.framelayout_sea)
