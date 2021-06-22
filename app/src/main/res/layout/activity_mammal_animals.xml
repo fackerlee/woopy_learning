@@ -58,7 +58,7 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/button_bg_round"
+            android:background="@drawable/button_bg_round_speaker"
             android:clickable="true"
             android:padding="4dp">
 
