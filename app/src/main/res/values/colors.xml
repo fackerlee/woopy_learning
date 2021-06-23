@@ -11,5 +11,7 @@
 
     <color name="bg_purple">#5D589E</color>
     <color name="btn_orange">#FF911A</color>
+    <color name="bg_play">#FF786E</color>
+    <color name="bg_animals_card">#2A294C</color>
 
 </resources>
