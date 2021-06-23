@@ -6,6 +6,10 @@
     <string name="app_farm_animals">Farm Animals</string>
     <string name="app_mammal_animals">Mammal Animals</string>
     <string name="app_bird_animals">Bird Animals</string>
+    <string name="app_play">Let\'s Play</string>
+    <string name="app_listen">Listen to it</string>
+    <string name="app_find">Find the match</string>
+
 
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
