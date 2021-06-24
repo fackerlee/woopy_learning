@@ -8,7 +8,7 @@
                 android:height="160dp" />
             <stroke
                 android:width="2dp"
-                android:color="@color/wrong_stroke" />
+                android:color="@color/btn_orange" />
             <corners
                 android:radius="15dp"/>
         </shape>
