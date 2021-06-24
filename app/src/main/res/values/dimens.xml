@@ -7,7 +7,7 @@
     <dimen name="type_padding_up_down">10dp</dimen>
     <dimen name="title_type_margin">50dp</dimen>
     <dimen name="des_margin_animals">20dp</dimen>
-    <dimen name="layout_margin_listen">10dp</dimen>
+    <dimen name="layout_margin_listen">15dp</dimen>
     <dimen name="layout_padding_listen">15dp</dimen>
     <dimen name="radio_coner_cardview">20dp</dimen>
 </resources>

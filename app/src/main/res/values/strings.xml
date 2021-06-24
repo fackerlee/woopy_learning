@@ -43,7 +43,8 @@
     <string name="des_image_animals_mammal_monkey">image_animals_mammal_monkey</string>
     <string name="des_image_bg_bird">image_bg_bird</string>
     <string name="des_image_animals_bird_eagle">image_animals_bird_eagle</string>
-    <string name="what_animas_is_it">What animas is it ?</string>
+    <string name="what_animas_is_it">What animal is it ?</string>
     <string name="select_your_answer">Select your answer :</string>
     <string name="this_is_the_image_for_listen">this is the image for listen</string>
+    <string name="submit">SUBMIT</string>
 </resources>

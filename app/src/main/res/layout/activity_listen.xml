@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             app:cardBackgroundColor="@color/bg_play"
             app:cardCornerRadius="10dp">
 
@@ -78,7 +78,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_margin="@dimen/layout_margin_listen"
+            android:layout_marginLeft="@dimen/layout_margin_listen"
+            android:layout_marginRight="@dimen/layout_margin_listen"
+            android:layout_marginBottom="@dimen/layout_margin_listen"
             android:contentDescription="@string/this_is_the_image_for_listen"
             android:padding="@dimen/layout_padding_listen"
             app:srcCompat="@drawable/icon_12" />
@@ -89,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginVertical="3dp"
+            android:layout_marginVertical="10dp"
             tools:text="TIGER" />
     </androidx.cardview.widget.CardView>
 
@@ -110,7 +112,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_margin="@dimen/layout_margin_listen"
+            android:layout_marginLeft="@dimen/layout_margin_listen"
+            android:layout_marginRight="@dimen/layout_margin_listen"
+            android:layout_marginBottom="@dimen/layout_margin_listen"
             android:contentDescription="@string/this_is_the_image_for_listen"
             android:padding="@dimen/layout_padding_listen"
             app:srcCompat="@drawable/icon_06" />
@@ -121,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginVertical="3dp"
+            android:layout_marginVertical="10dp"
             tools:text="SNAKE" />
     </androidx.cardview.widget.CardView>
 
@@ -142,7 +146,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_margin="@dimen/layout_margin_listen"
+            android:layout_marginLeft="@dimen/layout_margin_listen"
+            android:layout_marginRight="@dimen/layout_margin_listen"
+            android:layout_marginBottom="@dimen/layout_margin_listen"
             android:contentDescription="@string/this_is_the_image_for_listen"
             android:padding="@dimen/layout_padding_listen"
             app:srcCompat="@drawable/icon_11" />
@@ -153,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginVertical="3dp"
+            android:layout_marginVertical="10dp"
             tools:text="ELEPHANT" />
     </androidx.cardview.widget.CardView>
 
@@ -176,7 +182,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:layout_margin="@dimen/layout_margin_listen"
+            android:layout_marginLeft="@dimen/layout_margin_listen"
+            android:layout_marginRight="@dimen/layout_margin_listen"
+            android:layout_marginBottom="@dimen/layout_margin_listen"
             android:contentDescription="@string/this_is_the_image_for_listen"
             android:padding="@dimen/layout_padding_listen"
             app:srcCompat="@drawable/icon_07" />
@@ -187,20 +195,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginVertical="3dp"
+            android:layout_marginVertical="10dp"
             tools:text="FOX" />
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/button_listen"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/bg_animals_card"
+        android:text="@string/submit"
+        app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardview_listen_3"
-        tools:text="SUBMIT" />
+        app:layout_constraintTop_toBottomOf="@+id/cardview_listen_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
