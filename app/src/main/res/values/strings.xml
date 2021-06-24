@@ -47,4 +47,5 @@
     <string name="select_your_answer">Select your answer :</string>
     <string name="this_is_the_image_for_listen">this is the image for listen</string>
     <string name="submit">SUBMIT</string>
+    <string name="image_quiz">image quiz</string>
 </resources>

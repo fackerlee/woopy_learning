@@ -1,45 +1,96 @@
 package com.example.final_assignment
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 
 class ListenActivity : AppCompatActivity() {
 
-    lateinit var framelayout_listen_play: FrameLayout
-    lateinit var cardview_listen_1: CardView
-    lateinit var cardview_listen_2: CardView
-    lateinit var cardview_listen_3: CardView
-    lateinit var cardview_listen_4: CardView
-    lateinit var text_listen_1: TextView
-    lateinit var text_listen_2: TextView
-    lateinit var text_listen_3: TextView
-    lateinit var text_listen_4: TextView
+    private lateinit var framelayout_btn_play: FrameLayout
+    private lateinit var imageView_listen_1: ImageView
+    private lateinit var imageView_listen_2: ImageView
+    private lateinit var imageView_listen_3: ImageView
+    private lateinit var imageView_listen_4: ImageView
+    private lateinit var text_listen_1: TextView
+    private lateinit var text_listen_2: TextView
+    private lateinit var text_listen_3: TextView
+    private lateinit var text_listen_4: TextView
+    private lateinit var button_submit: Button
 
-    lateinit var button_listen: Button
+    val options = arrayOf(
+        Listen(
+            R.drawable.icon_12, "TIGER", R.drawable.icon_06, "SNAKE", R.drawable.icon_11, "ELEPHANT", R.drawable.icon_07, "RED FOX"
+        ),
+        Listen(
+            R.drawable.icon_13, "SEAL", R.drawable.icon_14, "DOLPHIN", R.drawable.icon_05, "WHALE", R.drawable.icon_15, "POLAR BEAR"
+        ),
+        Listen(
+            R.drawable.icon_17, "CROW", R.drawable.icon_20, "PEAFOWL", R.drawable.icon_19, "OWL", R.drawable.icon_18, "EAGLE"
+        )
+    )
+
+    private var index:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listen)
 
         setReferences()
+        setListeners()
+        loadAnimal()
 
+        framelayout_btn_play.setOnClickListener {
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.tiger)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.whale)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.owl)
+                mediaPlayer.start()
+            } else {
+            }
+        }
+    }
 
+    private fun loadAnimal(index: Int = 0){
+        imageView_listen_1.setImageResource(options[index].image_1)
+        text_listen_1.text = options[index].text_1
+        imageView_listen_2.setImageResource(options[index].image_2)
+        text_listen_2.text = options[index].text_2
+        imageView_listen_3.setImageResource(options[index].image_3)
+        text_listen_3.text = options[index].text_3
+        imageView_listen_4.setImageResource(options[index].image_4)
+        text_listen_4.text = options[index].text_4
+    }
+
+    private fun setListeners() {
+        button_submit.setOnClickListener {
+            //move to the next index position
+            index++
+            //reset to the first question
+            if (index == options.size)
+                index = 0
+
+            loadAnimal(index)     //load and update animal options
+        }
     }
 
     private fun setReferences() {
-        button_listen = findViewById(R.id.button_listen)
-        framelayout_listen_play = findViewById(R.id.framelayout_listen_play)
-        cardview_listen_1 = findViewById(R.id.cardview_listen_1)
-        cardview_listen_2 = findViewById(R.id.cardview_listen_2)
-        cardview_listen_3 = findViewById(R.id.cardview_listen_3)
-        cardview_listen_4 = findViewById(R.id.cardview_listen_4)
+        button_submit = findViewById(R.id.button_submit)
+        framelayout_btn_play = findViewById(R.id.framelayout_btn_play)
+        imageView_listen_1 = findViewById(R.id.imageView_listen_1)
+        imageView_listen_2 = findViewById(R.id.imageView_listen_2)
+        imageView_listen_3 = findViewById(R.id.imageView_listen_3)
+        imageView_listen_4 = findViewById(R.id.imageView_listen_4)
         text_listen_1 = findViewById(R.id.text_listen_1)
         text_listen_2 = findViewById(R.id.text_listen_2)
         text_listen_3 = findViewById(R.id.text_listen_3)
