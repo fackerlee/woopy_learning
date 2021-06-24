@@ -82,8 +82,9 @@ class BirdAnimalsActivity : AppCompatActivity() {
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
+        image_animal.applyClickShrink()
 
-        //play animal sound after button speaker is clicked
+        //play animal sound when button speaker is clicked
         framelayout_btn_icon_speaker.setOnClickListener {
             if (index == 0) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.eagle)
@@ -96,6 +97,23 @@ class BirdAnimalsActivity : AppCompatActivity() {
                 mediaPlayer.start()
             } else if (index == 3) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.crow)
+                mediaPlayer.start()
+            } else {
+            }
+        }
+        //play animal name when the image is clicked
+        image_animal.setOnClickListener {
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.eagle_name)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.owl_name)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.peafowl_name)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.crow_name)
                 mediaPlayer.start()
             } else {
             }

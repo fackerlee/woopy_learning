@@ -84,8 +84,9 @@ class FarmAnimalsActivity : AppCompatActivity() {
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
+        image_animal.applyClickShrink()
 
-        //play animal sound after button speaker is clicked
+        //play animal sound when button speaker is clicked
         framelayout_btn_icon_speaker.setOnClickListener {
             if (index == 0) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.cow)
@@ -98,6 +99,24 @@ class FarmAnimalsActivity : AppCompatActivity() {
                 mediaPlayer.start()
             } else if (index == 3) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.pig)
+                mediaPlayer.start()
+            } else {
+            }
+        }
+
+        //play animal name when the image is clicked
+        image_animal.setOnClickListener {
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.cow_name)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.chicken_name)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.horse_name)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.pig_name)
                 mediaPlayer.start()
             } else {
             }

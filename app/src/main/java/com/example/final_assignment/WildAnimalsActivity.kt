@@ -82,21 +82,39 @@ class WildAnimalsActivity : AppCompatActivity() {
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
+        image_animal.applyClickShrink()
 
-        //play animal sound after button speaker is clicked
+        //play animal sound when button speaker is clicked
         framelayout_btn_icon_speaker.setOnClickListener {
 
             if (index == 0) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.snake)
                 mediaPlayer.start()
             } else if (index == 1) {
-                val mediaPlayer = MediaPlayer.create(this, R.raw.wolf)
+                val mediaPlayer = MediaPlayer.create(this, R.raw.fox)
                 mediaPlayer.start()
             } else if (index == 2) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.hippo)
                 mediaPlayer.start()
             } else if (index == 3) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.tiger)
+                mediaPlayer.start()
+            } else {
+            }
+        }
+        //play animal name when the image is clicked
+       image_animal.setOnClickListener {
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.snake_name)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.redfox_name)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.hippopotamus_name)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.tiger_name)
                 mediaPlayer.start()
             } else {
             }

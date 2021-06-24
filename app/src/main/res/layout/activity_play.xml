@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardBackgroundColor="@color/bg_play"
-            app:cardCornerRadius="@dimen/radio_coner_cardview">
+            app:cardCornerRadius="@dimen/radio_corner_cardview">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardBackgroundColor="@color/bg_match"
-            app:cardCornerRadius="@dimen/radio_coner_cardview">
+            app:cardCornerRadius="@dimen/radio_corner_cardview">
 
             <ImageView
                 android:id="@+id/imageView3"

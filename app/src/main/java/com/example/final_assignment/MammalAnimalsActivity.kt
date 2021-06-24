@@ -85,8 +85,9 @@ class MammalAnimalsActivity : AppCompatActivity() {
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
+        image_animal.applyClickShrink()
 
-        //play animal sound after button speaker is clicked
+        //play animal sound when button speaker is clicked
         framelayout_btn_icon_speaker.setOnClickListener {
             if (index == 0) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.monkey)
@@ -98,7 +99,24 @@ class MammalAnimalsActivity : AppCompatActivity() {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.elephant)
                 mediaPlayer.start()
             } else if (index == 3) {
-                val mediaPlayer = MediaPlayer.create(this, R.raw.girrafe)
+                val mediaPlayer = MediaPlayer.create(this, R.raw.giraffe)
+                mediaPlayer.start()
+            } else {
+            }
+        }
+        //play animal name when the image is clicked
+        image_animal.setOnClickListener {
+            if (index == 0) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.monkey_name)
+                mediaPlayer.start()
+            } else if (index == 1) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.lion_name)
+                mediaPlayer.start()
+            } else if (index == 2) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.elephant_name)
+                mediaPlayer.start()
+            } else if (index == 3) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.giraffe_name)
                 mediaPlayer.start()
             } else {
             }
