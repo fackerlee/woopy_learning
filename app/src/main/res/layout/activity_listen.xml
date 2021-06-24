@@ -204,7 +204,7 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/bg_animals_card"
+        android:backgroundTint="@color/bg_play"
         android:text="@string/submit"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"

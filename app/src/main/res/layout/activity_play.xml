@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_purple"
     tools:context=".PlayActivity">
 
     <FrameLayout
         android:id="@+id/framelayout_Listen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,15 +21,15 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:cardBackgroundColor="@color/bg_purple">
+            app:cardBackgroundColor="@color/bg_play"
+            app:cardCornerRadius="@dimen/radio_coner_cardview">
 
-            <TextView
-                android:id="@+id/textView"
-                style="@style/title_text"
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Listen to it " />
+                android:contentDescription="@string/image_quiz"
+                app:srcCompat="@drawable/quiz_logo_1" />
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 
@@ -34,7 +37,9 @@
         android:id="@+id/framelayout_Find"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framelayout_Listen">
@@ -42,17 +47,15 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:cardBackgroundColor="@color/bg_purple">
+            app:cardBackgroundColor="@color/bg_match"
+            app:cardCornerRadius="@dimen/radio_coner_cardview">
 
-            <TextView
-                android:id="@+id/textView2"
-                style="@style/title_text"
+            <ImageView
+                android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Find the match"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:contentDescription="@string/image_quiz"
+                app:srcCompat="@drawable/quiz_logo_2" />
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
