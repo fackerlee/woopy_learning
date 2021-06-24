@@ -13,5 +13,6 @@
     <color name="btn_orange">#FF911A</color>
     <color name="bg_play">#ff6d5a</color>
     <color name="bg_animals_card">#2A294C</color>
-
+    <color name="correct_stroke">#00ea5f</color>
+    <color name="wrong_stroke">#ff4040</color>
 </resources>

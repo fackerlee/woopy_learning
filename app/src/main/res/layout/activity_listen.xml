@@ -63,7 +63,7 @@
         android:layout_marginEnd="31dp"
         android:clickable="true"
         app:cardBackgroundColor="@color/bg_animals_card"
-        app:cardCornerRadius="@dimen/radio_coner_cardview"
+        app:cardCornerRadius="@dimen/radio_corner_cardview"
         app:layout_constraintEnd_toStartOf="@+id/cardview_listen_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_answer">
@@ -98,7 +98,7 @@
         android:layout_marginEnd="30dp"
         android:clickable="true"
         app:cardBackgroundColor="@color/bg_animals_card"
-        app:cardCornerRadius="@dimen/radio_coner_cardview"
+        app:cardCornerRadius="@dimen/radio_corner_cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_answer">
 
@@ -132,7 +132,7 @@
         android:layout_marginEnd="28dp"
         android:clickable="true"
         app:cardBackgroundColor="@color/bg_animals_card"
-        app:cardCornerRadius="@dimen/radio_coner_cardview"
+        app:cardCornerRadius="@dimen/radio_corner_cardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardview_listen_2">
 
@@ -167,7 +167,7 @@
         android:layout_marginEnd="33dp"
         android:clickable="true"
         app:cardBackgroundColor="@color/bg_animals_card"
-        app:cardCornerRadius="@dimen/radio_coner_cardview"
+        app:cardCornerRadius="@dimen/radio_corner_cardview"
         app:layout_constraintEnd_toStartOf="@+id/cardview_listen_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardview_listen_1">

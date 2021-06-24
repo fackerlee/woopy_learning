@@ -9,5 +9,5 @@
     <dimen name="des_margin_animals">20dp</dimen>
     <dimen name="layout_margin_listen">15dp</dimen>
     <dimen name="layout_padding_listen">15dp</dimen>
-    <dimen name="radio_coner_cardview">20dp</dimen>
+    <dimen name="radio_corner_cardview">15dp</dimen>
 </resources>
