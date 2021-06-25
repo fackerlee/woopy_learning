@@ -24,7 +24,6 @@ class FarmAnimalsActivity : AppCompatActivity() {
     private lateinit var content_speed: TextView
     private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
-    private lateinit var bg_ice: ImageView
     private lateinit var cardView_image: CardView
     //declared components that need animation
     val render_title = Render(this@FarmAnimalsActivity)

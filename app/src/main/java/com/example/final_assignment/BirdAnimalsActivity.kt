@@ -24,7 +24,6 @@ class BirdAnimalsActivity : AppCompatActivity() {
     private lateinit var content_speed: TextView
     private lateinit var button_next: FrameLayout
     private lateinit var framelayout_btn_icon_speaker: FrameLayout
-    private lateinit var bg_ice: ImageView
     private lateinit var cardView_image: CardView
     //declared components that need animation
     val render_title = Render(this@BirdAnimalsActivity)
@@ -171,7 +170,6 @@ class BirdAnimalsActivity : AppCompatActivity() {
         content_lifespan = findViewById(R.id.textview_lifespan)
         content_speed = findViewById(R.id.textview_speed)
         button_next = findViewById(R.id.framelayout_btn_icon_next)
-        bg_ice = findViewById(R.id.image_bg)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
