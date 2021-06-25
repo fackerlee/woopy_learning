@@ -37,14 +37,14 @@ class WildAnimalsActivity : AppCompatActivity() {
             "Snake", R.drawable.snake_1, "Carnivores", "Land and water", "10-15 Years", "29 km/h"
         ),
         Animal(
-            "Red Fox", R.drawable.fox, "Omnivores", "Forests, grasslands, mountains, and deserts", "2-5 Years", "50 km/h"
+            "Red Fox", R.drawable.fox, "Omnivores", "Forests, mountains, and deserts", "2-5 Years", "50 km/h"
         ),
         Animal(
             "Hippopotamus"
             , R.drawable.hippopotamus, "Herbivores", "live in areas with abundant water", "40-50 Years", "48 km/h"
         ),
         Animal("Tiger"
-            , R.drawable.tiger, "Carnivores", "Rain forests, grasslands and mangrove swamps", "8-10 Years", "65 km/h"
+            , R.drawable.tiger, "Carnivores", "Rain forests and mangrove swamps", "8-10 Years", "65 km/h"
         )
     )
 
