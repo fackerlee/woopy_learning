@@ -123,7 +123,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_habitat"
-        tools:text="Tropical rainforests of Asia, Africa, and America" />
+        tools:text="Tropical rainforests" />
 
     <TextView
         android:id="@+id/textview_title_lifespan"

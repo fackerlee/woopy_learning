@@ -37,7 +37,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
     //create a set of bird animal details
     val animals = arrayOf(
         Animal(
-            "Eagle", R.drawable.eagle, "Carnivores", "Wetlands, on the coasts and in marshes", "23-28 Years", "320 km/h"
+            "Eagle", R.drawable.eagle, "Carnivores", "Wetlands, coasts, and marshes", "23-28 Years", "320 km/h"
         ),
         Animal(
             "Owl", R.drawable.owl, "Carnivores", "Forests, mountains, deserts, and plains", "5-15 Years", "45 km/h"
@@ -46,7 +46,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
             "Peafowl", R.drawable.peafowls, "Omnivores", "Forests and farmland", "10-25 Years", "16 km/h"
         ),
         Animal("Crow"
-            , R.drawable.crow, "Omnivores", "Forests, grasslands, agricultural areas and farmland", "10-15 Years", "45 km/h"
+            , R.drawable.crow, "Omnivores", "Forests, grasslands, and farmland", "10-15 Years", "45 km/h"
         )
     )
     private var index:Int = 0   //index used to keep track the animal details

@@ -123,7 +123,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title_habitat"
-        tools:text="Wetlands, on the coasts and in marshes" />
+        tools:text="Wetlands, coasts, and marshes" />
 
     <TextView
         android:id="@+id/textview_title_lifespan"
