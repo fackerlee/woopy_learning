@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Woopy Learning</string>
-    <string name="app_type_animals">Types of Animals</string>
+    <string name="app_type_animals">Type of Animals</string>
     <string name="app_wild_animals">Wild Animals</string>
     <string name="app_sea_animals">Sea Animals</string>
     <string name="app_farm_animals">Farm Animals</string>
@@ -10,7 +10,6 @@
     <string name="app_listen">Listen to it</string>
     <string name="app_find">Find the match</string>
 
-
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
     <string name="dec_for_woopy_logo">This is the image of the Woopy logo</string>
@@ -19,20 +18,12 @@
     <string name="learn_now">Learn Now</string>
     <string name="let_s_play">Let\'s Play</string>
     <string name="menu">menu</string>
+    <!--Content Description-->
     <string name="des_wild_animals">This is the wild Animals</string>
     <string name="des_sea_animals">This is the sea Animals</string>
     <string name="des_farm_animals">This is the farm Animals</string>
     <string name="des_mammal_animals">This is mammal Animals</string>
     <string name="des_bird_animals">This is bird Animals</string>
-    <string name="txt_wild_animals">Wild Animals</string>
-    <string name="farm_animals">Farm Animals</string>
-    <string name="sea_animals">Sea Animals</string>
-    <string name="mammal_animals">Mammal Animals</string>
-    <string name="bird_animals">Bird Animals</string>
-    <string name="speed">Speed</string>
-    <string name="lifespan">Lifespan</string>
-    <string name="habitat">Habitat</string>
-    <string name="diet">Diet</string>
     <string name="des_image_bg_wild">image_bg_wild</string>
     <string name="des_image_animals_wild_snake">image_animals_wild_snake</string>
     <string name="des_image_bg_sea">image_bg_sea</string>
@@ -43,6 +34,16 @@
     <string name="des_image_animals_mammal_monkey">image_animals_mammal_monkey</string>
     <string name="des_image_bg_bird">image_bg_bird</string>
     <string name="des_image_animals_bird_eagle">image_animals_bird_eagle</string>
+    <!--Label-->
+    <string name="txt_wild_animals">Wild Animals</string>
+    <string name="farm_animals">Farm Animals</string>
+    <string name="sea_animals">Sea Animals</string>
+    <string name="mammal_animals">Mammal Animals</string>
+    <string name="bird_animals">Bird Animals</string>
+    <string name="speed">Speed</string>
+    <string name="lifespan">Lifespan</string>
+    <string name="habitat">Habitat</string>
+    <string name="diet">Diet</string>
     <string name="what_animas_is_it">What animal is it ?</string>
     <string name="select_your_answer">Select your answer :</string>
     <string name="this_is_the_image_for_listen">this is the image for listen</string>

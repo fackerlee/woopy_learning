@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
+import com.realpacific.clickshrinkeffect.applyClickShrink
 
 class PlayActivity : AppCompatActivity() {
 
@@ -23,15 +24,15 @@ class PlayActivity : AppCompatActivity() {
         framelayout_Listen.setOnClickListener {
             val intent = Intent(this, ListenActivity::class.java)
             startActivity(intent)
-
         }
 
         framelayout_Find.setOnClickListener {
             val intent = Intent(this, FindActivity::class.java)
             startActivity(intent)
-
         }
 
+        framelayout_Listen.applyClickShrink()
+        framelayout_Find.applyClickShrink()
 
     }
 
