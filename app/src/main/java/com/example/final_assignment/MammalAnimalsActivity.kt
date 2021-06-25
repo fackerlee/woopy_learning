@@ -37,17 +37,17 @@ class MammalAnimalsActivity : AppCompatActivity() {
     //create a set of mammal animal details
     val animals = arrayOf(
         Animal(
-            "Monkey", R.drawable.monkey, "Omnivores", "Tropical rainforests of Asia, Africa, and America", "15-20 Years", "55 km/h"
+            "Monkey", R.drawable.monkey, "Omnivores", "Tropical rainforests", "15-20 Years", "55 km/h"
         ),
         Animal(
             "Lion", R.drawable.lion, "Carnivores", "Grassland, savanna, and open woodland", "8-15 Years", "80 km/h"
         ),
         Animal(
             "Elephant"
-            , R.drawable.elephant, "Herbivores", "Deserts, swamps, and highlands in tropical and subtropical", "60-70 Years", "40 km/h"
+            , R.drawable.elephant, "Herbivores", "Deserts, swamps, and highlands", "60-70 Years", "40 km/h"
         ),
         Animal("Giraffe"
-            , R.drawable.giraffe, "Herbivores", "Grasslands and open woodlands in East Africa", "20-26 Years", "60 km/h"
+            , R.drawable.giraffe, "Herbivores", "Open grasslands in East Africa", "20-26 Years", "60 km/h"
         )
     )
 
