@@ -44,10 +44,10 @@ class SeaAnimalsActivity : AppCompatActivity() {
         ),
         Animal(
             "Polar Bear"
-            , R.drawable.polarbear, "Carnivores", "Shores and on sea ice in the icy cold Arctic", "15-18 Years", "40 km/h"
+            , R.drawable.polarbear, "Carnivores", "Shores and on sea ice in the Arctic", "15-18 Years", "40 km/h"
         ),
         Animal("Seal"
-            , R.drawable.seal, "Carnivores", "Cold ocean waters or off the coasts of Antarctica", "25-30 Years", "28 km/h"
+            , R.drawable.seal, "Carnivores", "Cold ocean or the coasts of Antarctica", "25-30 Years", "28 km/h"
         )
     )
 
