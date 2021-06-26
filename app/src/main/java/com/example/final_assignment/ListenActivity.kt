@@ -44,10 +44,10 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         mQuestionsList = Constants.getQuestions()
         setReferences()
 
+        //Set the Question
         setQuestion()
 
-
-
+        //THis is the click event
         cardview_listen_1.setOnClickListener(this)
         cardview_listen_2.setOnClickListener(this)
         cardview_listen_3.setOnClickListener(this)
@@ -55,12 +55,13 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         framelayout_btn_play.setOnClickListener(this)
         button_submit.setOnClickListener(this)
 
-
+        //when loaded different sound effect when different question
         LoadTheSound()
 
 
     }
 
+    //Loaded the sound effect for the question
     private fun LoadTheSound() {
         framelayout_btn_play.setOnClickListener {
             if (mCurrentPosition == 1) {
@@ -77,6 +78,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    //declare the the click listener
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.cardview_listen_1 -> {
@@ -108,6 +110,8 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
                     }
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
+
+                    // This is to check if the answer is wrong
                     if (question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(
                             mSelectedOptionPosition,
@@ -121,6 +125,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
                         R.drawable.correct_border
                     )
 
+                    // This is for correct answer
                     if (mCurrentPosition == mQuestionsList!!.size) {
                         button_submit.text = "FINISH"
                     } else {
@@ -135,18 +140,21 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    //this will be handle to set the question to which the item already
     private fun setQuestion() {
         button_submit.visibility = View.INVISIBLE
 
+        // Getting the question from the list with the help of current position.
         val question = mQuestionsList!!.get(mCurrentPosition - 1)
+
         defaultOptionsView()
 
+        //if the position of question is last then change the text of the button
         if (mCurrentPosition == mQuestionsList!!.size) {
             button_submit.text = "SUBMIT"
         } else {
             button_submit.text = "SUBMIT"
         }
-
 
         imageView_listen_1.setImageResource(question.image_1)
         text_listen_1.text = question.text_1
@@ -159,19 +167,20 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    private fun selectedOptionView(tv: CardView, selectedOptionNum: Int) {
+    //declare user when click on the card view will be got selected broader line
+    private fun selectedOptionView(CV: CardView, selectedOptionNum: Int) {
 
         defaultOptionsView()
 
         mSelectedOptionPosition = selectedOptionNum
         button_submit.visibility = View.VISIBLE
-        tv.background = ContextCompat.getDrawable(
+        CV.background = ContextCompat.getDrawable(
             this@ListenActivity,
             R.drawable.selected_border
         )
     }
 
-
+    //default options view when the new question is loaded or when the answer is reselected
     private fun defaultOptionsView() {
 
         val options = ArrayList<CardView>()
@@ -188,6 +197,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    //default options view when the new question is loaded or when the answer is reselected
     private fun answerView(answer: Int, drawableView: Int) {
 
         when (answer) {
@@ -218,7 +228,6 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-    // END
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
