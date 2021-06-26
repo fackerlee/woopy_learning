@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_purple"
+    tools:context=".ResultActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/des_image_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/score_content" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="@color/bg_animals_card"
+        app:cardCornerRadius="@dimen/type_corner_radius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/type_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="@string/your_score"
+            android:textColor="@color/btn_orange" />
+
+        <TextView
+            android:id="@+id/text_score"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="60dp"
+            android:paddingTop="90dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/text_divider"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="105dp"
+            android:paddingTop="90dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            android:text="@string/divider"
+            android:textColor="@color/btn_orange"
+            android:textSize="110sp" />
+
+        <TextView
+            android:id="@+id/text_total"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="170dp"
+            android:paddingTop="140dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/btn_orange"
+            tools:text="5" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button_finish"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/bg_play"
+        android:text="@string/finish"
+        android:textSize="18sp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
