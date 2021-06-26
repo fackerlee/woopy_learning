@@ -25,9 +25,6 @@ class ResultActivity : AppCompatActivity() {
         button_finish.visibility = View.VISIBLE
 
         button_finish.setOnClickListener {
-//            val intent = Intent(this, PlayActivity::class.java)
-//            startActivity(intent)
-//            finish()
             startActivity(Intent(this, PlayActivity::class.java))
             finish()
         }
