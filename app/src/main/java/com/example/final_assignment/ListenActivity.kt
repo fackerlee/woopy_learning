@@ -1,59 +1,75 @@
 package com.example.final_assignment
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.View
+import android.widget.*
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 
-class ListenActivity : AppCompatActivity() {
+class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var framelayout_btn_play: FrameLayout
     private lateinit var imageView_listen_1: ImageView
     private lateinit var imageView_listen_2: ImageView
     private lateinit var imageView_listen_3: ImageView
     private lateinit var imageView_listen_4: ImageView
+    private lateinit var cardview_listen_1: CardView
+    private lateinit var cardview_listen_2: CardView
+    private lateinit var cardview_listen_3: CardView
+    private lateinit var cardview_listen_4: CardView
     private lateinit var text_listen_1: TextView
     private lateinit var text_listen_2: TextView
     private lateinit var text_listen_3: TextView
     private lateinit var text_listen_4: TextView
     private lateinit var button_submit: Button
 
-    val options = arrayOf(
-        Listen(
-            R.drawable.icon_12, "TIGER", R.drawable.icon_06, "SNAKE", R.drawable.icon_11, "ELEPHANT", R.drawable.icon_07, "RED FOX"
-        ),
-        Listen(
-            R.drawable.icon_13, "SEAL", R.drawable.icon_14, "DOLPHIN", R.drawable.icon_05, "WHALE", R.drawable.icon_15, "POLAR BEAR"
-        ),
-        Listen(
-            R.drawable.icon_17, "CROW", R.drawable.icon_20, "PEAFOWL", R.drawable.icon_19, "OWL", R.drawable.icon_18, "EAGLE"
-        )
-    )
+    private var mCurrentPosition: Int = 1 // Default and the first question position
+    private var mQuestionsList: ArrayList<Listen>? = null
 
-    private var index:Int = 0
+    private var mCorrectAnswers: Int = 0
+    private var mSelectedOptionPosition: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listen)
-
+        mQuestionsList = Constants.getQuestions()
         setReferences()
-        setListeners()
-        loadAnimal()
 
+        setQuestion()
+
+
+
+        cardview_listen_1.setOnClickListener(this)
+        cardview_listen_2.setOnClickListener(this)
+        cardview_listen_3.setOnClickListener(this)
+        cardview_listen_4.setOnClickListener(this)
+        framelayout_btn_play.setOnClickListener(this)
+        button_submit.setOnClickListener(this)
+
+
+        LoadTheSound()
+
+
+    }
+
+    private fun LoadTheSound() {
         framelayout_btn_play.setOnClickListener {
-            if (index == 0) {
+            if (mCurrentPosition == 1) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.tiger)
                 mediaPlayer.start()
-            } else if (index == 1) {
+            } else if (mCurrentPosition == 2) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.whale)
                 mediaPlayer.start()
-            } else if (index == 2) {
+            } else if (mCurrentPosition == 3) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.owl)
                 mediaPlayer.start()
             } else {
@@ -61,28 +77,148 @@ class ListenActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadAnimal(index: Int = 0){
-        imageView_listen_1.setImageResource(options[index].image_1)
-        text_listen_1.text = options[index].text_1
-        imageView_listen_2.setImageResource(options[index].image_2)
-        text_listen_2.text = options[index].text_2
-        imageView_listen_3.setImageResource(options[index].image_3)
-        text_listen_3.text = options[index].text_3
-        imageView_listen_4.setImageResource(options[index].image_4)
-        text_listen_4.text = options[index].text_4
-    }
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.cardview_listen_1 -> {
+                selectedOptionView(cardview_listen_1, 1)
+            }
+            R.id.cardview_listen_2 -> {
+                selectedOptionView(cardview_listen_2, 2)
+            }
+            R.id.cardview_listen_3 -> {
+                selectedOptionView(cardview_listen_3, 3)
+            }
+            R.id.cardview_listen_4 -> {
+                selectedOptionView(cardview_listen_4, 4)
+            }
+            R.id.button_submit -> {
+                if (mSelectedOptionPosition == 0) {
+                    mCurrentPosition++
 
-    private fun setListeners() {
-        button_submit.setOnClickListener {
-            //move to the next index position
-            index++
-            //reset to the first question
-            if (index == options.size)
-                index = 0
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            startActivity(intent)
+                        }
+                    }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+                    if (question!!.correctAnswer != mSelectedOptionPosition) {
+                        answerView(
+                            mSelectedOptionPosition,
+                            R.drawable.wrong_border
+                        )
+                    } else {
+                        mCorrectAnswers++
+                    }
+                    answerView(
+                        question.correctAnswer,
+                        R.drawable.correct_border
+                    )
 
-            loadAnimal(index)     //load and update animal options
+                    if (mCurrentPosition == mQuestionsList!!.size) {
+                        button_submit.text = "FINISH"
+                    } else {
+                        button_submit.text = "Next Question"
+                    }
+                    mSelectedOptionPosition = 0
+                }
+
+            }
+
+
         }
     }
+
+    private fun setQuestion() {
+        button_submit.visibility = View.INVISIBLE
+
+        val question = mQuestionsList!!.get(mCurrentPosition - 1)
+        defaultOptionsView()
+
+        if (mCurrentPosition == mQuestionsList!!.size) {
+            button_submit.text = "SUBMIT"
+        } else {
+            button_submit.text = "SUBMIT"
+        }
+
+
+        imageView_listen_1.setImageResource(question.image_1)
+        text_listen_1.text = question.text_1
+        imageView_listen_2.setImageResource(question.image_2)
+        text_listen_2.text = question.text_2
+        imageView_listen_3.setImageResource(question.image_3)
+        text_listen_3.text = question.text_3
+        imageView_listen_4.setImageResource(question.image_4)
+        text_listen_4.text = question.text_4
+
+    }
+
+    private fun selectedOptionView(tv: CardView, selectedOptionNum: Int) {
+
+        defaultOptionsView()
+
+        mSelectedOptionPosition = selectedOptionNum
+        button_submit.visibility = View.VISIBLE
+        tv.background = ContextCompat.getDrawable(
+            this@ListenActivity,
+            R.drawable.selected_border
+        )
+    }
+
+
+    private fun defaultOptionsView() {
+
+        val options = ArrayList<CardView>()
+        options.add(0, cardview_listen_1)
+        options.add(1, cardview_listen_2)
+        options.add(2, cardview_listen_3)
+        options.add(3, cardview_listen_4)
+
+        for (option in options) {
+            option.background = ContextCompat.getDrawable(
+                this@ListenActivity,
+                R.drawable.default_border
+            )
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView: Int) {
+
+        when (answer) {
+
+            1 -> {
+                cardview_listen_1.background = ContextCompat.getDrawable(
+                    this@ListenActivity,
+                    drawableView
+                )
+            }
+            2 -> {
+                cardview_listen_2.background = ContextCompat.getDrawable(
+                    this@ListenActivity,
+                    drawableView
+                )
+            }
+            3 -> {
+                cardview_listen_3.background = ContextCompat.getDrawable(
+                    this@ListenActivity,
+                    drawableView
+                )
+            }
+            4 -> {
+                cardview_listen_4.background = ContextCompat.getDrawable(
+                    this@ListenActivity,
+                    drawableView
+                )
+            }
+        }
+    }
+    // END
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
@@ -95,6 +231,10 @@ class ListenActivity : AppCompatActivity() {
         text_listen_2 = findViewById(R.id.text_listen_2)
         text_listen_3 = findViewById(R.id.text_listen_3)
         text_listen_4 = findViewById(R.id.text_listen_4)
+        cardview_listen_1 = findViewById(R.id.cardview_listen_1)
+        cardview_listen_2 = findViewById(R.id.cardview_listen_2)
+        cardview_listen_3 = findViewById(R.id.cardview_listen_3)
+        cardview_listen_4 = findViewById(R.id.cardview_listen_4)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -123,4 +263,6 @@ class ListenActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 }

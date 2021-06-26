@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_assignment">
-
+        <activity android:name=".ResultActivity"></activity>
         <activity
             android:name=".FindActivity"
-            android:parentActivityName=".PlayActivity"
-            android:label="@string/app_find">
+            android:label="@string/app_find"
+            android:parentActivityName=".PlayActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".PlayActivity" />
         </activity>
-
         <activity
             android:name=".ListenActivity"
             android:label="@string/app_listen">
@@ -26,7 +25,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".PlayActivity" />
         </activity>
-
         <activity
             android:name=".PlayActivity"
             android:label="@string/app_play" />
@@ -38,7 +36,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".MammalAnimalsActivity"
             android:label="@string/app_mammal_animals"
@@ -47,7 +44,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".FarmAnimalsActivity"
             android:label="@string/app_farm_animals"
@@ -56,7 +52,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".SeaAnimalsActivity"
             android:label="@string/app_sea_animals"
@@ -65,16 +60,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".WildAnimalsActivity"
             android:label="@string/app_wild_animals"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/Theme.Final_assignment.NoActionBar">
@@ -84,7 +78,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_type_animals" />
