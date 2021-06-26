@@ -9,6 +9,7 @@
     <string name="app_play">Let\'s Play</string>
     <string name="app_listen">Listen to it</string>
     <string name="app_find">Find the match</string>
+    <string name="app_score">Score</string>
 
     <!--Welcome Page-->
     <string name="title_for_welcome_page">Let’s start the journey!</string>
@@ -50,4 +51,8 @@
     <string name="nextqus">Next Questions</string>
     <string name="image_quiz">image quiz</string>
     <string name="next">NEXT</string>
+    <string name="your_score">Your Score</string>
+    <string name="finish">FINISH</string>
+    <string name="des_image_score">des_image_score</string>
+    <string name="divider">/</string>
 </resources>

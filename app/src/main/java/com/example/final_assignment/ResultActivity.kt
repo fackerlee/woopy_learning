@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 class ResultActivity : AppCompatActivity() {
     private lateinit var button_finish: Button
     private lateinit var text_score: TextView
+    private lateinit var text_total: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class ResultActivity : AppCompatActivity() {
 
         button_finish = findViewById(R.id.button_finish)
         text_score = findViewById(R.id.text_score)
+        text_total = findViewById(R.id.text_total)
 
         button_finish.visibility = View.VISIBLE
 
@@ -31,7 +33,8 @@ class ResultActivity : AppCompatActivity() {
 
         val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
         val correctAnswers = intent.getIntExtra(Constants.CORRECT_ANSWERS, 0)
-        text_score.text = "Your score is $correctAnswers out of $totalQuestions"
+        text_score.text = "$correctAnswers"
+        text_total.text = "$totalQuestions"
 
 
     }

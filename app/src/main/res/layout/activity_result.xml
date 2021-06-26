@@ -4,28 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_purple"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/text_score"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:layout_marginBottom="484dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/des_image_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/score_content" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/bg_animals_card"
+        app:cardCornerRadius="@dimen/type_corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/type_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="@string/your_score"
+            android:textColor="@color/btn_orange" />
+
+        <TextView
+            android:id="@+id/text_score"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="70dp"
+            android:paddingTop="90dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/text_divider"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="120dp"
+            android:paddingTop="90dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            android:text="@string/divider"
+            android:textColor="@color/btn_orange"
+            android:textSize="110sp" />
+
+        <TextView
+            android:id="@+id/text_total"
+            style="@style/title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="190dp"
+            android:paddingTop="140dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/btn_orange"
+            tools:text="5" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/button_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="Button"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/bg_play"
+        android:text="@string/finish"
+        android:textSize="18sp"
+        app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_score" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
