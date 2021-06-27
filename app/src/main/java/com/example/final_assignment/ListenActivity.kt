@@ -1,12 +1,9 @@
 package com.example.final_assignment
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.Typeface
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -72,6 +69,12 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
                 mediaPlayer.start()
             } else if (mCurrentPosition == 3) {
                 val mediaPlayer = MediaPlayer.create(this, R.raw.owl)
+                mediaPlayer.start()
+            } else if (mCurrentPosition == 4) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.snake)
+                mediaPlayer.start()
+            } else if (mCurrentPosition == 5) {
+                val mediaPlayer = MediaPlayer.create(this, R.raw.chicken)
                 mediaPlayer.start()
             } else {
             }
@@ -231,7 +234,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
-        framelayout_btn_play = findViewById(R.id.framelayout_btn_play)
+        framelayout_btn_play = findViewById(R.id.framelayout_shadow)
         imageView_listen_1 = findViewById(R.id.imageView_listen_1)
         imageView_listen_2 = findViewById(R.id.imageView_listen_2)
         imageView_listen_3 = findViewById(R.id.imageView_listen_3)

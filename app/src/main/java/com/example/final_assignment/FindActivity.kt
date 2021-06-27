@@ -208,7 +208,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
-        framelayout_btn_play = findViewById(R.id.framelayout_btn_play)
+        framelayout_btn_play = findViewById(R.id.framelayout_shadow)
         imageView_listen_1 = findViewById(R.id.imageView_listen_1)
         imageView_listen_2 = findViewById(R.id.imageView_listen_2)
         imageView_listen_3 = findViewById(R.id.imageView_listen_3)
