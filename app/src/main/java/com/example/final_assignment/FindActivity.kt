@@ -1,6 +1,7 @@
 package com.example.final_assignment
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -27,6 +28,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var text_listen_2: TextView
     private lateinit var text_listen_3: TextView
     private lateinit var text_listen_4: TextView
+    private lateinit var animal_shadow: ImageView
     private lateinit var button_submit: Button
 
     private var mCurrentPosition: Int = 1 // Default and the first question position
@@ -54,6 +56,22 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         framelayout_btn_play.setOnClickListener(this)
         button_submit.setOnClickListener(this)
 
+        LoadAnimalShadow()
+    }
+
+    private fun LoadAnimalShadow() {
+            if (mCurrentPosition == 1) {
+                animal_shadow.setImageResource(R.drawable.owl_shadow)
+            } else if (mCurrentPosition == 2) {
+                animal_shadow.setImageResource(R.drawable.pig_shadow)
+            } else if (mCurrentPosition == 3) {
+                animal_shadow.setImageResource(R.drawable.cow_shadow)
+            } else if (mCurrentPosition == 4) {
+                animal_shadow.setImageResource(R.drawable.seal_shadow)
+            } else if (mCurrentPosition == 5) {
+                animal_shadow.setImageResource(R.drawable.fox_shadow)
+            } else {
+            }
     }
 
     //declare the the click listener
@@ -78,6 +96,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
                     when {
                         mCurrentPosition <= mQuestionsList!!.size -> {
                             setQuestion()
+                            LoadAnimalShadow()
                         }
                         else -> {
                             val intent = Intent(this, ResultActivity::class.java)
@@ -109,6 +128,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
                         button_submit.text = "Next Question"
                     }
                     mSelectedOptionPosition = 0
+
                 }
 
             }
@@ -221,6 +241,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_2 = findViewById(R.id.cardview_listen_2)
         cardview_listen_3 = findViewById(R.id.cardview_listen_3)
         cardview_listen_4 = findViewById(R.id.cardview_listen_4)
+        animal_shadow = findViewById(R.id.animal_shadow)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
