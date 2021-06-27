@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/framelayout_shadow"
+        android:id="@+id/framelayout_listen"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_question">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/image_play"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -50,7 +50,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/select_your_answer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/framelayout_shadow" />
+        app:layout_constraintTop_toBottomOf="@+id/framelayout_listen" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_listen_1"

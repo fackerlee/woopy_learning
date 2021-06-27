@@ -1,7 +1,6 @@
 package com.example.final_assignment
 
 import android.content.Intent
-import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -13,9 +12,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.realpacific.clickshrinkeffect.applyClickShrink
 
 class FindActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var framelayout_btn_play: FrameLayout
+
     private lateinit var imageView_listen_1: ImageView
     private lateinit var imageView_listen_2: ImageView
     private lateinit var imageView_listen_3: ImageView
@@ -53,10 +53,15 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_2.setOnClickListener(this)
         cardview_listen_3.setOnClickListener(this)
         cardview_listen_4.setOnClickListener(this)
-        framelayout_btn_play.setOnClickListener(this)
         button_submit.setOnClickListener(this)
 
         LoadAnimalShadow()
+
+        button_submit.applyClickShrink()
+        cardview_listen_1.applyClickShrink()
+        cardview_listen_2.applyClickShrink()
+        cardview_listen_3.applyClickShrink()
+        cardview_listen_4.applyClickShrink()
     }
 
     private fun LoadAnimalShadow() {
@@ -228,7 +233,6 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
-        framelayout_btn_play = findViewById(R.id.framelayout_shadow)
         imageView_listen_1 = findViewById(R.id.imageView_listen_1)
         imageView_listen_2 = findViewById(R.id.imageView_listen_2)
         imageView_listen_3 = findViewById(R.id.imageView_listen_3)

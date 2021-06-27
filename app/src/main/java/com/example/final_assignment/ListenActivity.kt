@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.realpacific.clickshrinkeffect.applyClickShrink
 
 class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -55,7 +56,12 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         //when loaded different sound effect when different question
         LoadTheSound()
 
-
+        framelayout_btn_play.applyClickShrink()
+        button_submit.applyClickShrink()
+        cardview_listen_1.applyClickShrink()
+        cardview_listen_2.applyClickShrink()
+        cardview_listen_3.applyClickShrink()
+        cardview_listen_4.applyClickShrink()
     }
 
     //Loaded the sound effect for the question
@@ -234,7 +240,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
-        framelayout_btn_play = findViewById(R.id.framelayout_shadow)
+        framelayout_btn_play = findViewById(R.id.framelayout_listen)
         imageView_listen_1 = findViewById(R.id.imageView_listen_1)
         imageView_listen_2 = findViewById(R.id.imageView_listen_2)
         imageView_listen_3 = findViewById(R.id.imageView_listen_3)
