@@ -9,7 +9,7 @@ import android.view.WindowInsetsController
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
+import com.realpacific.clickshrinkeffect.applyClickShrink
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var button_finish: Button
@@ -36,6 +36,6 @@ class ResultActivity : AppCompatActivity() {
         text_score.text = "$correctAnswers"
         text_total.text = "$totalQuestions"
 
-
+        button_finish.applyClickShrink()
     }
 }

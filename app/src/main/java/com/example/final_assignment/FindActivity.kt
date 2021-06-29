@@ -101,6 +101,7 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.button_submit -> {
                 if (mSelectedOptionPosition == 0) {
+                    enableClick()
                     mCurrentPosition++
 
                     when {
@@ -134,19 +135,32 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
                     // This is for correct answer
                     if (mCurrentPosition == mQuestionsList!!.size) {
                         button_submit.text = "FINISH"
+                        disableClick()
                     } else {
                         button_submit.text = "Next Question"
+                        disableClick()
                     }
                     mSelectedOptionPosition = 0
 
                 }
-
             }
-
-
         }
     }
 
+    //function to disable user to click on the answer
+    private fun disableClick() {
+        cardview_listen_1.isClickable = false
+        cardview_listen_2.isClickable = false
+        cardview_listen_3.isClickable = false
+        cardview_listen_4.isClickable = false
+    }
+    //function to enable user to click on the answer
+    private fun enableClick() {
+        cardview_listen_1.isClickable = true
+        cardview_listen_2.isClickable = true
+        cardview_listen_3.isClickable = true
+        cardview_listen_4.isClickable = true
+    }
     //this will be handle to set the question to which the item already
     private fun setQuestion() {
         button_submit.visibility = View.INVISIBLE

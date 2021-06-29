@@ -3,6 +3,7 @@ package com.example.final_assignment
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.realpacific.clickshrinkeffect.applyClickShrink
@@ -17,7 +18,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         player = MediaPlayer.create(this, R.raw.welcomebgm)
-
+        player?.isLooping = true
         player?.start()
 
         //set GUI references

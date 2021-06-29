@@ -1,6 +1,7 @@
 package com.example.final_assignment
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
@@ -18,11 +19,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var framelayout_farm: FrameLayout
     private lateinit var framelayout_mammal: FrameLayout
     private lateinit var framelayout_bird: FrameLayout
+    private var player: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        player = MediaPlayer.create(this, R.raw.welcomebgm)
+        player?.isLooping = true
+        player?.setVolume(0.1f, 0.1f)
+        player?.start()
 
         setReferences()
 
