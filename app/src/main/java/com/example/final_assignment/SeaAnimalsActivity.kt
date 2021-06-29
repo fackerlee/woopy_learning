@@ -12,6 +12,7 @@ import com.realpacific.clickshrinkeffect.applyClickShrink
 import render.animations.Attention
 import render.animations.Bounce
 import render.animations.Render
+import render.animations.Zoom
 
 class SeaAnimalsActivity : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
     val render_habitat = Render(this@SeaAnimalsActivity)
     val render_lifespan = Render(this@SeaAnimalsActivity)
     val render_speed = Render(this@SeaAnimalsActivity)
+    val render_animal = Render(this@SeaAnimalsActivity)
 
     //create a set of sea animal details
     val animals = arrayOf(
@@ -57,9 +59,13 @@ class SeaAnimalsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sea_animals)
 
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("Index", 0)
+        }
+
         setReference()      //set GUI references
         setListeners()      //create event handling for the button
-        loadAnimal(0)   //load the first animal details
+        loadAnimal(index)   //load animal details
 
         //set animation for the first animal details
         render_title.setAnimation(Attention.Shake(title_animal))
@@ -68,6 +74,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
         render_habitat.setAnimation(Bounce.InLeft(content_habitat))
         render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
         render_speed.setAnimation(Bounce.InLeft(content_speed))
+        render_animal.setAnimation(Zoom.In(image_animal))
         //set animation duration
         render_title.setDuration(1000)
         render_image.setDuration(1000)
@@ -75,6 +82,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
         render_habitat.setDuration(1000)
         render_lifespan.setDuration(1000)
         render_speed.setDuration(1000)
+        render_animal.setDuration(1000)
         //start animation
         render_title.start()
         render_image.start()
@@ -82,6 +90,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
         render_habitat.start()
         render_lifespan.start()
         render_speed.start()
+        render_animal.start()
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
@@ -142,6 +151,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
             render_habitat.setAnimation(Bounce.InLeft(content_habitat))
             render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
             render_speed.setAnimation(Bounce.InLeft(content_speed))
+            render_animal.setAnimation(Zoom.In(image_animal))
             //start animation
             render_title.start()
             render_image.start()
@@ -149,6 +159,7 @@ class SeaAnimalsActivity : AppCompatActivity() {
             render_habitat.start()
             render_lifespan.start()
             render_speed.start()
+            render_animal.start()
             //move to the next index position
             index++
             //change animal background for animal 3 and 4
@@ -165,6 +176,13 @@ class SeaAnimalsActivity : AppCompatActivity() {
 
             loadAnimal(index)      //load and update animal details
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt("Index", index)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
