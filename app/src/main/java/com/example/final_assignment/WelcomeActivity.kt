@@ -17,7 +17,9 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        player = MediaPlayer.create(this, R.raw.welcomebgm)
+        //set background music
+        player = MediaPlayer.create(this, R.raw.bg_music)
+        player?.setVolume(0.1f,0.1f)
         player?.isLooping = true
         player?.start()
 
@@ -27,7 +29,6 @@ class WelcomeActivity : AppCompatActivity() {
         //button clicked and go to MainActivity
         framelayout_btn_icon.setOnClickListener {
 
-            player?.pause()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
