@@ -12,6 +12,7 @@ import com.realpacific.clickshrinkeffect.applyClickShrink
 import render.animations.Attention
 import render.animations.Bounce
 import render.animations.Render
+import render.animations.Zoom
 
 class BirdAnimalsActivity : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
     val render_habitat = Render(this@BirdAnimalsActivity)
     val render_lifespan = Render(this@BirdAnimalsActivity)
     val render_speed = Render(this@BirdAnimalsActivity)
+    val render_animal = Render(this@BirdAnimalsActivity)
 
     //create a set of bird animal details
     val animals = arrayOf(
@@ -53,9 +55,14 @@ class BirdAnimalsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bird_animals)
+
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("Index", 0)
+        }
+
         setReference()      //set GUI references
         setListeners()      //create event handling for the button
-        loadAnimal(0)   //load the first animal details
+        loadAnimal(index)   //load animal details
 
         //set animation for the first animal details
         render_title.setAnimation(Attention.Shake(title_animal))
@@ -64,6 +71,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
         render_habitat.setAnimation(Bounce.InLeft(content_habitat))
         render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
         render_speed.setAnimation(Bounce.InLeft(content_speed))
+        render_animal.setAnimation(Zoom.In(image_animal))
         //set animation duration
         render_title.setDuration(1000)
         render_image.setDuration(1000)
@@ -71,6 +79,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
         render_habitat.setDuration(1000)
         render_lifespan.setDuration(1000)
         render_speed.setDuration(1000)
+        render_animal.setDuration(1000)
         //start animation
         render_title.start()
         render_image.start()
@@ -78,6 +87,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
         render_habitat.start()
         render_lifespan.start()
         render_speed.start()
+        render_animal.start()
         //apply click animation
         framelayout_btn_icon_speaker.applyClickShrink()
         button_next.applyClickShrink()
@@ -137,6 +147,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
             render_habitat.setAnimation(Bounce.InLeft(content_habitat))
             render_lifespan.setAnimation(Bounce.InLeft(content_lifespan))
             render_speed.setAnimation(Bounce.InLeft(content_speed))
+            render_animal.setAnimation(Zoom.In(image_animal))
             //start animation
             render_title.start()
             render_image.start()
@@ -144,6 +155,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
             render_habitat.start()
             render_lifespan.start()
             render_speed.start()
+            render_animal.start()
             //move to the next index position
             index++
             //reset to the first animal
@@ -152,6 +164,13 @@ class BirdAnimalsActivity : AppCompatActivity() {
 
             loadAnimal(index)     //load and update animal details
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt("Index", index)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
