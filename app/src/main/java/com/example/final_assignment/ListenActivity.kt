@@ -2,12 +2,12 @@ package com.example.final_assignment
 
 import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.realpacific.clickshrinkeffect.applyClickShrink
@@ -35,10 +35,15 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
     private var mCorrectAnswers: Int = 0
     private var mSelectedOptionPosition: Int = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listen)
+
+        if (savedInstanceState != null) {
+            mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
+            mCorrectAnswers = savedInstanceState.getInt("mCorrectAnswers", 0)
+        }
+
         mQuestionsList = Constants.getQuestions()
         setReferences()
 
@@ -254,6 +259,14 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_3 = findViewById(R.id.cardview_listen_3)
         cardview_listen_4 = findViewById(R.id.cardview_listen_4)
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("CurrentPosition", mCurrentPosition)
+        outState.putInt("mCorrectAnswers", mCorrectAnswers)
+
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

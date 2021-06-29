@@ -48,6 +48,11 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         //Set the Question
         setQuestion()
 
+        if (savedInstanceState != null) {
+            mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
+            mCorrectAnswers = savedInstanceState.getInt("mCorrectAnswers", 0)
+        }
+
         //THis is the click event
         cardview_listen_1.setOnClickListener(this)
         cardview_listen_2.setOnClickListener(this)
@@ -246,6 +251,13 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_3 = findViewById(R.id.cardview_listen_3)
         cardview_listen_4 = findViewById(R.id.cardview_listen_4)
         animal_shadow = findViewById(R.id.animal_shadow)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("CurrentPosition", mCurrentPosition)
+        outState.putInt("mCorrectAnswers", mCorrectAnswers)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
