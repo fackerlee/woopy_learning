@@ -40,6 +40,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_listen)
 
         if (savedInstanceState != null) {
+            mSelectedOptionPosition = savedInstanceState.getInt("mSelectedOptionPosition", 0)
             mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
             mCorrectAnswers = savedInstanceState.getInt("mCorrectAnswers", 0)
         }
@@ -276,6 +277,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        outState.putInt("mSelectedOptionPosition", mSelectedOptionPosition)
         outState.putInt("CurrentPosition", mCurrentPosition)
         outState.putInt("mCorrectAnswers", mCorrectAnswers)
 

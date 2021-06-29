@@ -42,16 +42,17 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find)
 
+        if (savedInstanceState != null) {
+            mSelectedOptionPosition = savedInstanceState.getInt("mSelectedOptionPosition", 0)
+            mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
+            mCorrectAnswers = savedInstanceState.getInt("mCorrectAnswers", 0)
+        }
+
         mQuestionsList = Constants2.getQuestions()
         setReferences()
 
         //Set the Question
         setQuestion()
-
-        if (savedInstanceState != null) {
-            mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
-            mCorrectAnswers = savedInstanceState.getInt("mCorrectAnswers", 0)
-        }
 
         //THis is the click event
         cardview_listen_1.setOnClickListener(this)
@@ -269,9 +270,9 @@ class FindActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        outState.putInt("mSelectedOptionPosition", mSelectedOptionPosition)
         outState.putInt("CurrentPosition", mCurrentPosition)
         outState.putInt("mCorrectAnswers", mCorrectAnswers)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
