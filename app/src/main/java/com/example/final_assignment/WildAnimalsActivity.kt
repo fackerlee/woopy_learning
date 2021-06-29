@@ -54,9 +54,13 @@ class WildAnimalsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wild_animals)
 
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("Index", 0)
+        }
+
         setReference()      //set GUI references
         setListeners()      //create event handling for the button
-        loadAnimal(0)   //load the first animal details
+        loadAnimal(index)   //load the first animal details
 
         //set animation for the first animal details
         render_title.setAnimation(Attention.Shake(title_animal))
@@ -156,11 +160,20 @@ class WildAnimalsActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt("Index", index)
+
+    }
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
+
     //set GUI references
     private fun setReference() {
         framelayout_btn_icon_speaker = findViewById(R.id.framelayout_btn_icon_speaker)
