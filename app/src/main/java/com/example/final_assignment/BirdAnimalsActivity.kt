@@ -56,6 +56,7 @@ class BirdAnimalsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bird_animals)
 
+        //save index before screen rotation
         if (savedInstanceState != null) {
             index = savedInstanceState.getInt("Index", 0)
         }
@@ -166,11 +167,11 @@ class BirdAnimalsActivity : AppCompatActivity() {
         }
     }
 
+    //maintain index position after screen rotation
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
         outState.putInt("Index", index)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

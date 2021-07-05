@@ -1,6 +1,6 @@
 package com.example.final_assignment
 
-//create data class for showing animal description
+//create data class for showing questions details
 data class Listen(
     val id: Int,
     val image_1: Int,

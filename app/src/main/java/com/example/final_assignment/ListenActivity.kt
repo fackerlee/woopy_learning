@@ -14,6 +14,7 @@ import com.realpacific.clickshrinkeffect.applyClickShrink
 
 class ListenActivity : AppCompatActivity(), View.OnClickListener {
 
+    //GUI components
     private lateinit var framelayout_btn_play: FrameLayout
     private lateinit var imageView_listen_1: ImageView
     private lateinit var imageView_listen_2: ImageView
@@ -29,7 +30,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var text_listen_4: TextView
     private lateinit var button_submit: Button
 
-    private var mCurrentPosition: Int = 1 // Default and the first question position
+    private var mCurrentPosition: Int = 1 //default and the first question position
     private var mQuestionsList: ArrayList<Listen>? = null
 
     private var mCorrectAnswers: Int = 0
@@ -39,6 +40,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listen)
 
+        //save position before screen rotation
         if (savedInstanceState != null) {
             mSelectedOptionPosition = savedInstanceState.getInt("mSelectedOptionPosition", 0)
             mCurrentPosition = savedInstanceState.getInt("CurrentPosition", 0)
@@ -48,10 +50,10 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         mQuestionsList = Constants.getQuestions()
         setReferences()
 
-        //Set the Question
+        //set the Question
         setQuestion()
 
-        //THis is the click event
+        //click event
         cardview_listen_1.setOnClickListener(this)
         cardview_listen_2.setOnClickListener(this)
         cardview_listen_3.setOnClickListener(this)
@@ -59,9 +61,9 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         framelayout_btn_play.setOnClickListener(this)
         button_submit.setOnClickListener(this)
 
-        //when loaded different sound effect when different question
         LoadTheSound()
 
+        //apply click animation
         framelayout_btn_play.applyClickShrink()
         button_submit.applyClickShrink()
         cardview_listen_1.applyClickShrink()
@@ -70,7 +72,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_4.applyClickShrink()
     }
 
-    //Loaded the sound effect for the question
+    //function to load sound effect for each question
     private fun LoadTheSound() {
         framelayout_btn_play.setOnClickListener {
             if (mCurrentPosition == 1) {
@@ -127,7 +129,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
 
-                    // This is to check if the answer is wrong
+                    //this is to check if the answer is wrong
                     if (question!!.correctAnswer != mSelectedOptionPosition) {
                         answerView(
                             mSelectedOptionPosition,
@@ -141,7 +143,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
                         R.drawable.correct_border
                     )
 
-                    // If this is the last question
+                    //if this is the last question
                     if (mCurrentPosition == mQuestionsList!!.size) {
                         button_submit.text = "FINISH"    //show finish in button submit
                         disableClick()
@@ -154,14 +156,15 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-    //function to disable user to click on the answer
+
+    //function to disable user to click on the option
     private fun disableClick() {
         cardview_listen_1.isClickable = false
         cardview_listen_2.isClickable = false
         cardview_listen_3.isClickable = false
         cardview_listen_4.isClickable = false
     }
-    //function to enable user to click on the answer
+    //function to enable user to click on the option
     private fun enableClick() {
         cardview_listen_1.isClickable = true
         cardview_listen_2.isClickable = true
@@ -169,11 +172,11 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_4.isClickable = true
     }
 
-    //this will be handle to set the question to which the item already
+    //this will be handle to set the question
     private fun setQuestion() {
         button_submit.visibility = View.INVISIBLE
 
-        // Getting the question from the list with the help of current position.
+        //getting the question from the list with the help of current position
         val question = mQuestionsList!!.get(mCurrentPosition - 1)
 
         defaultOptionsView()
@@ -185,6 +188,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
             button_submit.text = "SUBMIT"
         }
 
+        //set default
         imageView_listen_1.setImageResource(question.image_1)
         text_listen_1.text = question.text_1
         imageView_listen_2.setImageResource(question.image_2)
@@ -193,10 +197,9 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         text_listen_3.text = question.text_3
         imageView_listen_4.setImageResource(question.image_4)
         text_listen_4.text = question.text_4
-
     }
 
-    //declare user when click on the card view will be got selected broader line
+    //selected border will show when user click on the card view option
     private fun selectedOptionView(CV: CardView, selectedOptionNum: Int) {
 
         defaultOptionsView()
@@ -209,7 +212,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         )
     }
 
-    //default options view when the new question is loaded or when the answer is reselected
+    //default options view will show when the new question is loaded or when the answer is reselected
     private fun defaultOptionsView() {
 
         val options = ArrayList<CardView>()
@@ -226,7 +229,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    //default options view when the new question is loaded or when the answer is reselected
+    //default options view will show when the new question is loaded or when the answer is reselected
     private fun answerView(answer: Int, drawableView: Int) {
 
         when (answer) {
@@ -257,7 +260,7 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
+    //set GUI references
     private fun setReferences() {
         button_submit = findViewById(R.id.button_submit)
         framelayout_btn_play = findViewById(R.id.framelayout_listen)
@@ -275,12 +278,12 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
         cardview_listen_4 = findViewById(R.id.cardview_listen_4)
     }
 
+    //maintain save position after screen rotation
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("mSelectedOptionPosition", mSelectedOptionPosition)
         outState.putInt("CurrentPosition", mCurrentPosition)
         outState.putInt("mCorrectAnswers", mCorrectAnswers)
-
     }
 
 
@@ -310,6 +313,4 @@ class ListenActivity : AppCompatActivity(), View.OnClickListener {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
 }

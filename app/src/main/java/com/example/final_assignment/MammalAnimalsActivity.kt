@@ -58,6 +58,7 @@ class MammalAnimalsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mammal_animals)
 
+        //save index before screen rotation
         if (savedInstanceState != null) {
             index = savedInstanceState.getInt("Index", 0)
         }
@@ -168,11 +169,11 @@ class MammalAnimalsActivity : AppCompatActivity() {
         }
     }
 
+    //maintain index position after screen rotation
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
         outState.putInt("Index", index)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

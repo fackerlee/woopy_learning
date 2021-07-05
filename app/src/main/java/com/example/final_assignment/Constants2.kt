@@ -1,8 +1,10 @@
 package com.example.final_assignment
 
 object Constants2 {
+    // Declare value string
     const val CORRECT_ANSWERS: String = "correct_answers"
     const val TOTAL_QUESTIONS: String = "total_questions"
+    // Create questions array lists
     fun getQuestions(): ArrayList<Listen> {
         val questionsList = ArrayList<Listen>()
 
