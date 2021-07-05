@@ -48,7 +48,7 @@
                     style="@style/type_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/title_type_margin"
                     android:text="@string/txt_wild_animals" />
             </androidx.cardview.widget.CardView>
@@ -85,7 +85,7 @@
                     style="@style/type_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/title_type_margin"
                     android:text="@string/sea_animals" />
             </androidx.cardview.widget.CardView>
@@ -121,7 +121,7 @@
                     style="@style/type_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/title_type_margin"
                     android:text="@string/farm_animals" />
             </androidx.cardview.widget.CardView>
@@ -158,7 +158,7 @@
                     style="@style/type_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/title_type_margin"
                     android:text="@string/mammal_animals" />
             </androidx.cardview.widget.CardView>
@@ -194,7 +194,7 @@
                     style="@style/type_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/title_type_margin"
                     android:text="@string/bird_animals" />
             </androidx.cardview.widget.CardView>
