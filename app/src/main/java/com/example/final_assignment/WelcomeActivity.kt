@@ -7,6 +7,7 @@ import android.provider.MediaStore
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.realpacific.clickshrinkeffect.applyClickShrink
+import kotlin.system.exitProcess
 
 
 class WelcomeActivity : AppCompatActivity() {
@@ -51,11 +52,11 @@ class WelcomeActivity : AppCompatActivity() {
         super.onResume()
         player?.start()
     }
-    //stop background music and exit app when
-    //the back button on the phone is clicked
+    //exit the application when the back button on the phone is pressed
     override fun onBackPressed() {
         super.onBackPressed()
         player?.release()
-        System.exit(0)
+        finishAffinity()
+        exitProcess(0)
     }
 }   //end class

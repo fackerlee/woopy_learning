@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import com.realpacific.clickshrinkeffect.applyClickShrink
 import render.animations.Attention
 import render.animations.Render
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -108,9 +109,10 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-    //back to welcome page when the back button on the phone is clicked
+    //exit the application when the back button on the phone is pressed
     override fun onBackPressed() {
         super.onBackPressed()
-        System.exit(0)
+        finishAffinity()
+        exitProcess(0)
     }
 }
