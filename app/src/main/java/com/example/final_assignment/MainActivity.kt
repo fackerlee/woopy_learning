@@ -108,5 +108,9 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
+    //back to welcome page when the back button on the phone is clicked
+    override fun onBackPressed() {
+        super.onBackPressed()
+        System.exit(0)
+    }
 }

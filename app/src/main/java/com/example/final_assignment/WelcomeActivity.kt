@@ -17,12 +17,6 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        //set background music
-        player = MediaPlayer.create(this, R.raw.bg_music)
-        player?.setVolume(0.1f,0.1f)
-        player?.isLooping = true
-        player?.start()
-
         //set GUI references
         framelayout_btn_icon = findViewById(R.id.framelayout_btn_icon_next)
 
@@ -37,4 +31,31 @@ class WelcomeActivity : AppCompatActivity() {
         framelayout_btn_icon.applyClickShrink()
 
     }   //end onCreate
+
+    //start background music
+    override fun onStart() {
+        super.onStart()
+        player = MediaPlayer.create(this, R.raw.bg_music)
+        player?.setVolume(0.1f,0.1f)
+        player?.isLooping = true
+        player?.start()
+    }
+    //destroy background music when screen rotated
+    override fun onDestroy() {
+        super.onDestroy()
+        player?.stop()
+        player?.release()
+    }
+    //resume back the background music
+    override fun onResume() {
+        super.onResume()
+        player?.start()
+    }
+    //stop background music and exit app when
+    //the back button on the phone is clicked
+    override fun onBackPressed() {
+        super.onBackPressed()
+        player?.release()
+        System.exit(0)
+    }
 }   //end class
