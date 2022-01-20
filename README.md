@@ -4,3 +4,4 @@ This project was to create a preschool mobile application for kids to learn abou
 
 ## Screenshot
 
+![Screenshot](https://github.com/fackerlee/woopy_learning/blob/master/Screenshot%202022-01-21%20003808.png)
